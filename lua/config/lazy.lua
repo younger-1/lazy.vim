@@ -50,4 +50,14 @@ require("lazy").setup({
       },
     },
   },
+  pkg = {
+    sources = {
+      "lazy",
+      "rockspec",
+      "packspec",
+    },
+  },
+  rocks = {
+    enabled = false,
+  },
 })
