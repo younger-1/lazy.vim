@@ -8,45 +8,112 @@ return {
       return opts
     end,
     keys = {
+      { "<leader>s<space>", "<cmd>Telescope resume<cr>", desc = "Resume" },
+      { "<leader>su", "<cmd>Telescope pickers<cr>", desc = "Pickers" },
       {
-        "<leader>s<space>",
-        "<cmd>Telescope resume<cr>",
-        desc = "Resume",
+        mode = "x",
+        "<leader>sg",
+        function()
+          local text = require("util").get_visual_selection()
+          require("telescope.builtin").live_grep({})
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Grep",
       },
       {
-        "<leader>su",
-        "<cmd>Telescope pickers<cr>",
-        desc = "Pickers",
+        mode = "x",
+        "<leader>sw",
+        function()
+          require("telescope.builtin").grep_string({
+            search = require("util").get_visual_selection_by_reg(),
+          })
+        end,
+        desc = "Word",
       },
+      --
+      { "<leader>fr", "<cmd>Telescope oldfiles only_cwd=true<cr>", desc = "Recent (cwd)" },
+      { "<leader>fR", "<cmd>Telescope oldfiles<cr>", desc = "Recent file" },
+      {
+        mode = "x",
+        "<leader>ff",
+        function()
+          local text = require("util").get_visual_selection()
+          require("telescope.builtin").find_files({})
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Find file",
+      },
+      --
+      { "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Status" },
+      { "<leader>gS", "<cmd>Telescope git_stash<cr>", desc = "Stash" },
+      { "<leader>gC", "<cmd>Telescope git_bcommits<CR>", desc = "Buffer commits" },
+      { "<leader>gl", "<cmd>Telescope git_bcommits_range<cr>", desc = "Line commits" },
+      {
+        mode = "x",
+        "<leader>gl",
+        function()
+          -- vim.fn.feedkeys(vim.keycode("<Esc>"))
+          require("telescope.builtin").git_bcommits_range({
+            from = vim.fn.line("'<"),
+            to = vim.fn.line("'>"),
+          })
+        end,
+        desc = "Line commits",
+      },
+      --
       {
         "<leader>yc",
         LazyVim.pick("files", { cwd = vim.fn.stdpath("config") }),
-        desc = "Find Config File",
+        desc = "Find config file",
       },
       {
         "<leader>yC",
         LazyVim.pick("live_grep", { cwd = vim.fn.stdpath("config") }),
-        desc = "Search Config File",
+        desc = "Search config file",
+      },
+      {
+        mode = "x",
+        "<leader>yC",
+        function()
+          local text = require("util").get_visual_selection()
+          require("telescope.builtin").live_grep({
+            cwd = vim.fn.stdpath("config"),
+          })
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Search config file",
       },
       {
         "<leader>yl",
         LazyVim.pick("files", { cwd = LazyVim.get_plugin_path("LazyVim") }),
-        desc = "Find LazyVim File",
+        desc = "Find LazyVim file",
       },
       {
         "<leader>yL",
         LazyVim.pick("live_grep", { cwd = LazyVim.get_plugin_path("LazyVim") }),
-        desc = "Search LazyVim File",
+        desc = "Search LazyVim file",
+      },
+      {
+        mode = "x",
+        "<leader>yL",
+        function()
+          local text = require("util").get_visual_selection()
+          require("telescope.builtin").live_grep({
+            cwd = LazyVim.get_plugin_path("LazyVim"),
+          })
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Search LazyVim file",
       },
       {
         "<leader>ya",
         LazyVim.pick("files", { cwd = require("lazy.core.config").options.root }),
-        desc = "Find plugin File",
+        desc = "Find plugin file",
       },
       {
         "<leader>yA",
         LazyVim.pick("live_grep", { cwd = require("lazy.core.config").options.root }),
-        desc = "Search plugin File",
+        desc = "Search plugin file",
       },
     },
     dependencies = {
