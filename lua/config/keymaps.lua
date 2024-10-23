@@ -3,8 +3,7 @@
 -- - https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- - $LAZYVIM_DIR/lua/lazyvim/config/keymaps.lua
 
--- local map = vim.keymap.set
-local map = LazyVim.safe_keymap_set
+local map = vim.keymap.set
 
 -- Basic
 map("x", "X", '"+x')

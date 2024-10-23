@@ -2,6 +2,17 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     opts = {
+      attach_to_untracked = true,
+      word_diff = true,
+      current_line_blame = true,
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+        delay = vim.o.updatetime,
+        ignore_whitespace = false,
+        virt_text_priority = 100,
+        use_focus = true,
+      },
       on_attach = function(bufnr)
         local gitsigns = require("gitsigns")
 
@@ -67,7 +78,7 @@ return {
         map("n", "<leader>hP", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview hunk" })
         map("n", "<leader>hb", "<cmd>Gitsigns blame<cr>", { desc = "Blame" })
         map("n", "<leader>hl", "<cmd>Gitsigns blame_line<cr>", { desc = "Blame line" })
-        map("n", "<leader>hL", "<cmd>Gitsigns blame_line full=1<cr>", { desc = "Blame line(full)" })
+        map("n", "<leader>hL", "<cmd>Gitsigns blame_line full=1<cr>", { desc = "Blame line (full)" })
 
         map("n", '<leader>h"', "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Line blame" })
         map("n", "<leader>h'", "<cmd>Gitsigns toggle_linehl<cr>", { desc = "Line highlight" })
