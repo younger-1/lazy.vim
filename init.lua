@@ -1,6 +1,4 @@
-if vim.loader then
-  vim.loader.enable()
-end
+vim.loader.enable()
 
 vim.env.LAZYVIM_DIR = vim.fn.stdpath("data") .. "/lazy/lazyvim"
 
