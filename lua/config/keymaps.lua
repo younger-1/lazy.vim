@@ -16,7 +16,8 @@ map("c", "<C-v>", "<C-r>+")
 map("", "<TAB>", "%", { remap = true })
 map("", "<C-i>", "<C-i>")
 
-map("n", "<BS>", "<C-^>")
+-- map("n", "<BS>", "<C-^>")
+-- map({ "n", "i" }, "<C-s>", "<cmd>update<cr>", { desc = "Save File" })
 
 map("!", "<C-a>", "<Home>")
 map("!", "<C-e>", "<End>")

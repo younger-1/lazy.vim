@@ -4,6 +4,13 @@ return {
     ---@type LazyVimConfig
     opts = {
       colorscheme = "tokyonight", -- catppuccin
+      news = {
+        -- When enabled, NEWS.md will be shown when changed.
+        -- This only contains big new features and breaking changes.
+        lazyvim = true,
+        -- Same but for Neovim's news.txt
+        neovim = true,
+      },
     },
     keys = {
       -- { "<leader>l", false }, -- TODO:not working
