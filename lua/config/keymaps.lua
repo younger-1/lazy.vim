@@ -64,3 +64,43 @@ map("n", "<leader><cr>", "<cmd>message<cr>")
 
 map("n", "<leader>vi", "<cmd>Inspect<cr>")
 map("n", "<leader>vI", "<cmd>InspectTree<cr>")
+
+-- abbreviations only expand when you are typing a command and press space
+local function command_alias(abbr, expansion)
+  vim.keymap.set("ca", abbr, function()
+    local cmdline = vim.fn.getcmdline()
+    local first_word = cmdline:match("%S+")
+    local typing_command = vim.fn.getcmdtype() == ":" and vim.fn.getcmdpos() == (#first_word + 1)
+    if not typing_command then
+      return abbr
+    end
+    if type(expansion) == "function" then
+      return expansion() or abbr
+    end
+    return expansion
+  end, { remap = false, expr = true })
+end
+
+command_alias("ev", "e $VIMRUNTIME/")
+command_alias("evv", "e $VIMRUNTIME/lua/vim/")
+command_alias("evp", "e $VIMRUNTIME/plugin/")
+command_alias("evP", "e $VIMRUNTIME/pack/dist/opt/")
+command_alias("eva", "e $VIMRUNTIME/autoload/")
+command_alias("evf", "e $VIMRUNTIME/ftplugin/")
+command_alias("evi", "e $VIMRUNTIME/indent/")
+command_alias("evs", "e $VIMRUNTIME/syntax/")
+command_alias("evc", "e $VIMRUNTIME/colors/")
+command_alias("evd", "e $VIMRUNTIME/doc/")
+command_alias("evC", "e $VIMRUNTIME/compiler/")
+command_alias("evk", "e $VIMRUNTIME/keymap/")
+command_alias("evS", "e $VIMRUNTIME/spell/")
+command_alias("evm", "e $VIMRUNTIME/macros/")
+command_alias("evt", "e $VIMRUNTIME/tutor/")
+command_alias("evT", "e $VIMRUNTIME/tools/")
+
+command_alias("=", "lua")
+command_alias("h", "vert h")
+command_alias("!", "terminal")
+
+command_alias("git", "Git")
+command_alias("man", "Man")
