@@ -24,9 +24,11 @@ return {
       { "<leader>bl", "<cmd>BufferLineCloseRight<cr>", desc = "Close right" },
       { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", desc = "Close left" },
     },
+    ---@module 'bufferline'
+    ---@type bufferline.UserConfig
     opts = {
       options = {
-        always_show_bufferline = true,
+        always_show_bufferline = false,
       },
     },
   },

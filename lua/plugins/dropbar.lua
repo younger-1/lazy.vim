@@ -1,7 +1,6 @@
 return {
   {
     "Bekaboo/dropbar.nvim",
-    enabled = false,
     event = "LazyFile",
     keys = {
       {
