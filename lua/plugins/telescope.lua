@@ -1,12 +1,17 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    opts = function(_, opts)
-      opts.defaults.cache_picker = {
-        num_pickers = 20,
-      }
-      return opts
-    end,
+    opts = {
+      defaults = {
+        cache_picker = {
+          num_pickers = 20,
+        },
+        dynamic_preview_title = true,
+        path_display = {
+          filename_first = { reverse_directories = false },
+        },
+      },
+    },
     keys = {
       { "<leader>s<space>", "<cmd>Telescope resume<cr>", desc = "Resume" },
       { "<leader>su", "<cmd>Telescope pickers<cr>", desc = "Pickers" },
