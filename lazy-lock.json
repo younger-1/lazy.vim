@@ -9,6 +9,7 @@
   "conform.nvim": { "branch": "master", "commit": "f5bd8419f8a29451e20bdb1061a54fe13d5c8de3" },
   "dashboard-nvim": { "branch": "master", "commit": "d2c5a4d1341f5ca1ed2ecb4ecfcff2bc8ea18b14" },
   "dressing.nvim": { "branch": "master", "commit": "1b7921eecc65af1baf8ac1dc06f0794934cbcfb2" },
+  "dropbar.nvim": { "branch": "master", "commit": "22382f44f8ce0320d38023c6a68f3ef4087c8c10" },
   "flash.nvim": { "branch": "main", "commit": "34c7be146a91fec3555c33fe89c7d643f6ef5cf1" },
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
   "gitsigns.nvim": { "branch": "main", "commit": "863903631e676b33e8be2acb17512fdc1b80b4fb" },
