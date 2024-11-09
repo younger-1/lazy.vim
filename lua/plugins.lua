@@ -8,6 +8,7 @@ end
 -- spec("plugins.bufferline")
 -- spec("plugins.colorscheme")
 
+---@alias module table
 local all = {
   editor = {
     core = {
@@ -26,7 +27,12 @@ local all = {
   },
   appearance = {
     dim = {
-      "tint",
+      -- "tint",
+      -- "vimade",
+      "twilight",
+    },
+    zen = {
+      "zen-mode",
     },
   },
   lang = {
