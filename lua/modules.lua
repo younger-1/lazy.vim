@@ -21,6 +21,9 @@ local all = {
       -- explore with new project
       "snipe",
     },
+    motion = {
+      "matchup",
+    },
   },
   ui = {
     bufferline = {
