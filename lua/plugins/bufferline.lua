@@ -5,7 +5,7 @@ return {
       {
         "<BS>",
         function()
-          if vim.v.count >= 1 then
+          if vim.v.count > 0 then
             vim.cmd("BufferLineGoToBuffer " .. vim.v.count)
           else
             vim.cmd("silent! b#")

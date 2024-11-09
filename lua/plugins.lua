@@ -15,6 +15,10 @@ local all = {
       "lazyvim",
       "colorscheme",
     },
+    buffer = {
+      "harpoon",
+      "snipe",
+    },
   },
   ui = {
     bufferline = {
