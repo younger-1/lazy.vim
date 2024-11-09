@@ -16,7 +16,9 @@ local all = {
       "colorscheme",
     },
     buffer = {
+      -- work with familiar project
       "harpoon",
+      -- explore with new project
       "snipe",
     },
   },
