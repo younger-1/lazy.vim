@@ -28,6 +28,9 @@ local all = {
       "dropbar",
       "navic",
     },
+    window = {
+      "winsep",
+    },
   },
   appearance = {
     dim = {
