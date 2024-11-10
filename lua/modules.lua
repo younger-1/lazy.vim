@@ -16,12 +16,6 @@ local all = {
       "snacks",
       "colorscheme",
     },
-    buffer = {
-      -- work with familiar project
-      "harpoon",
-      -- explore with new project
-      "snipe",
-    },
     motion = {
       "matchup",
     },
@@ -34,8 +28,14 @@ local all = {
       "dropbar",
       "navic",
     },
-    window = {
-      "winsep",
+    buffer = {
+      -- work with familiar project
+      "harpoon",
+      -- explore with new project
+      "snipe",
+    },
+    file = {
+      "mini.files",
     },
   },
   appearance = {
@@ -46,6 +46,9 @@ local all = {
     },
     zen = {
       "zen-mode",
+    },
+    window = {
+      "winsep",
     },
   },
   lang = {
