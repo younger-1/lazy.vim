@@ -13,6 +13,7 @@ local all = {
   editor = {
     core = {
       "lazyvim",
+      "snacks",
       "colorscheme",
     },
     buffer = {

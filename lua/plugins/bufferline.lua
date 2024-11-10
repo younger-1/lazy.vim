@@ -17,8 +17,6 @@ return {
       { "<A-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
       { "<A-S-h>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
       { "<A-S-l>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
-      -- { "<A-c>", LazyVim.ui.bufremove, desc = "Close buffer" },
-      -- { "<A-c>", "<cmd>QuitWindowOrBuffer", desc = "Close buffer" },
       --
       { "<leader>bj", "<cmd>BufferLinePick<cr>", desc = "Pick" },
       { "<leader>bq", "<cmd>BufferLinePickClose<cr>", desc = "Pick close" },
