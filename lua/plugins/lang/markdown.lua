@@ -1,4 +1,5 @@
 return {
+  { import = "lazyvim.plugins.extras.lang.markdown" },
   {
     "mfussenegger/nvim-lint",
     optional = true,

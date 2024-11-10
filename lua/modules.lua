@@ -51,7 +51,7 @@ local all = {
       "winsep",
     },
   },
-  lang = {
+  coding = {
     lsp = {
       "lspconfig",
       "trouble",
@@ -59,6 +59,14 @@ local all = {
     treesitter = {
       "treesitter",
       "treesj",
+    },
+  },
+  lang = {
+    go = {
+      "lang.go",
+    },
+    markdown = {
+      "lang.markdown",
     },
     json = {
       "sortjson",
