@@ -13,7 +13,7 @@ map("x", "d", '"_d')
 map("i", "<C-v>", "<C-g>u<C-r><C-o>+")
 map("c", "<C-v>", "<C-r>+")
 
-map("", "<TAB>", "%", { remap = true })
+-- map("", "<TAB>", "%", { remap = true })
 map("", "<C-i>", "<C-i>")
 
 -- map("n", "<BS>", "<C-^>")

@@ -3,15 +3,26 @@ return {
     "andymass/vim-matchup",
     event = { "BufReadPost", "BufNewFile" },
     keys = {
+      { "<tab>", "%", remap = true },
+      { "<S-tab>", "g%", remap = true },
       { "<C-y>", "<cmd>MatchupWhereAmI?<cr>" },
     },
     init = function()
-      vim.g.matchup_matchparen_offscreen = {
-        -- method = "popup", -- disabled, as we have treesitter-context
-      }
+      -- Do not use builtin matchit.vim and matchparen.vim since we use vim-matchup
+      vim.g.loaded_matchit = 1
+      vim.g.loaded_matchparen = 1
 
       vim.g.matchup_matchparen_deferred = 1
       vim.g.matchup_matchparen_hi_surround_always = 1
+      vim.g.matchup_matchparen_offscreen = {
+        method = "popup",
+        fullwidth = 1,
+        syntax_hl = 1,
+        highlight = "Normal",
+      }
+      vim.g.matchup_matchparen_nomode = "i"
+      vim.g.matchup_matchparen_stopline = 400 * 2 -- for match highlighting only
+      vim.g.matchup_delim_stopline = 1500 * 2 -- generally
     end,
   },
   {
