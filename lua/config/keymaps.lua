@@ -36,6 +36,9 @@ map("c", "<A-n>", "<Down>")
 map("c", "<A-p>", "<Up>")
 
 -- Advanced
+map("n", [[\\]], "<C-W>s", { desc = "Split window below", remap = true })
+map("n", [[||]], "<C-W>v", { desc = "Split window right", remap = true })
+
 vim.cmd([[
 command! QuitWindowOrBuffer cclose | lclose | try | close | catch /E444/ | bd | endtry
 ]])
