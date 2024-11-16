@@ -1,17 +1,56 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    opts = {
-      defaults = {
-        cache_picker = {
-          num_pickers = 20,
+    opts = function(_, opts)
+      local actions = require("telescope.actions")
+      return vim.tbl_deep_extend("force", opts, {
+        defaults = {
+          cache_picker = {
+            num_pickers = 20,
+          },
+          dynamic_preview_title = true,
+          path_display = {
+            filename_first = { reverse_directories = false },
+          },
+          mappings = {
+            i = {
+              ["<A-n>"] = actions.cycle_history_next,
+              ["<A-p>"] = actions.cycle_history_prev,
+
+              ["<A-j>"] = { actions.results_scrolling_down, type = "action", opts = { desc = "nop" } },
+              ["<A-k>"] = { actions.results_scrolling_up, type = "action", opts = { desc = "nop" } },
+              ["<A-h>"] = { actions.results_scrolling_left, type = "action", opts = { desc = "nop" } },
+              ["<A-l>"] = { actions.results_scrolling_right, type = "action", opts = { desc = "nop" } },
+
+              ["<A-S-j>"] = { actions.preview_scrolling_down, type = "action", opts = { desc = "nop" } },
+              ["<A-S-k>"] = { actions.preview_scrolling_up, type = "action", opts = { desc = "nop" } },
+              ["<A-S-h>"] = { actions.preview_scrolling_left, type = "action", opts = { desc = "nop" } },
+              ["<A-S-l>"] = { actions.preview_scrolling_right, type = "action", opts = { desc = "nop" } },
+
+              ["<S-down>"] = { actions.results_scrolling_down, type = "action", opts = { desc = "nop" } },
+              ["<S-up>"] = { actions.results_scrolling_up, type = "action", opts = { desc = "nop" } },
+              ["<S-left>"] = { actions.results_scrolling_left, type = "action", opts = { desc = "nop" } },
+              ["<S-right>"] = { actions.results_scrolling_right, type = "action", opts = { desc = "nop" } },
+
+              ["<A-down>"] = { actions.preview_scrolling_down, type = "action", opts = { desc = "nop" } },
+              ["<A-up>"] = { actions.preview_scrolling_up, type = "action", opts = { desc = "nop" } },
+              ["<A-left>"] = { actions.preview_scrolling_left, type = "action", opts = { desc = "nop" } },
+              ["<A-right>"] = { actions.preview_scrolling_right, type = "action", opts = { desc = "nop" } },
+
+              ["<A-a>"] = actions.toggle_all,
+              ["<A-d>"] = actions.drop_all,
+
+              ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+              ["<C-z>"] = actions.smart_send_to_loclist + actions.open_loclist,
+
+              ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
+              ["<A-z>"] = actions.smart_add_to_loclist + actions.open_loclist,
+            },
+          },
         },
-        dynamic_preview_title = true,
-        path_display = {
-          filename_first = { reverse_directories = false },
-        },
-      },
-    },
+      })
+    end,
+
     keys = {
       { "<leader>s<space>", "<cmd>Telescope resume<cr>", desc = "Resume" },
       { "<leader>su", "<cmd>Telescope pickers<cr>", desc = "Pickers" },
@@ -129,7 +168,7 @@ return {
         "natecraddock/telescope-zf-native.nvim",
         cond = false,
         submodules = false,
-        dependencies = {
+        specs = {
           {
             "nvim-telescope/telescope.nvim",
             opts = {
@@ -169,6 +208,8 @@ return {
         "nvim-telescope/telescope-smart-history.nvim",
         dependencies = {
           { "kkharji/sqlite.lua" },
+        },
+        specs = {
           {
             "nvim-telescope/telescope.nvim",
             opts = {
@@ -199,7 +240,7 @@ return {
         desc = "Lazy plugins",
       },
     },
-    dependencies = {
+    specs = {
       {
         "nvim-telescope/telescope.nvim",
         opts = {

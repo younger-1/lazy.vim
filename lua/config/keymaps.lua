@@ -13,7 +13,8 @@ map("x", "d", '"_d')
 map("i", "<C-v>", "<C-g>u<C-r><C-o>+")
 map("c", "<C-v>", "<C-r>+")
 
--- map("", "<TAB>", "%", { remap = true })
+-- map("", "<tab>", "%", { remap = true })
+-- map("", "<S-tab>", "g%", { remap = true })
 map("", "<C-i>", "<C-i>")
 
 -- map("n", "<BS>", "<C-^>")
@@ -102,7 +103,7 @@ command_alias("evt", "e $VIMRUNTIME/tutor/")
 command_alias("evT", "e $VIMRUNTIME/tools/")
 
 command_alias("=", "lua")
-command_alias("h", "vert h")
+-- command_alias("h", "vert h")
 command_alias("!", "terminal")
 
 command_alias("git", "Git")

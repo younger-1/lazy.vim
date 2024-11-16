@@ -3,8 +3,8 @@ return {
     "andymass/vim-matchup",
     event = { "BufReadPost", "BufNewFile" },
     keys = {
-      { "<tab>", "%", remap = true },
-      { "<S-tab>", "g%", remap = true },
+      { "<tab>", "%", remap = true, mode = { "n", "x", "o" } },
+      { "<S-tab>", "g%", remap = true, mode = { "n", "x", "o" } },
       { "<C-y>", "<cmd>MatchupWhereAmI?<cr>" },
     },
     init = function()
@@ -15,10 +15,10 @@ return {
       vim.g.matchup_matchparen_deferred = 1
       vim.g.matchup_matchparen_hi_surround_always = 1
       vim.g.matchup_matchparen_offscreen = {
-        method = "popup",
-        fullwidth = 1,
-        syntax_hl = 1,
-        highlight = "Normal",
+        -- method = "popup",
+        -- fullwidth = 1,
+        -- syntax_hl = 1,
+        -- highlight = "Normal",
       }
       vim.g.matchup_matchparen_nomode = "i"
       vim.g.matchup_matchparen_stopline = 400 * 2 -- for match highlighting only
