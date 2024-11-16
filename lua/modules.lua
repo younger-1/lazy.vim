@@ -1,4 +1,14 @@
-LAZY_PLUGIN_SPEC = {}
+LAZY_PLUGIN_SPEC = {
+  { import = "lazyvim.plugins.extras.coding.mini-surround" },
+  { import = "lazyvim.plugins.extras.coding.yanky" },
+  { import = "lazyvim.plugins.extras.editor.illuminate" },
+  { import = "lazyvim.plugins.extras.editor.outline" },
+  { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+  { import = "lazyvim.plugins.extras.lang.clangd" },
+  { import = "lazyvim.plugins.extras.lang.java" },
+  { import = "lazyvim.plugins.extras.lang.json" },
+  { import = "lazyvim.plugins.extras.lang.toml" },
+}
 
 local function spec(item)
   table.insert(LAZY_PLUGIN_SPEC, { import = item })
@@ -58,17 +68,13 @@ local all = {
       "trouble",
     },
     treesitter = {
-      "treesitter",
       "treesj",
+      -- "treesitter.refactor",
     },
   },
   lang = {
-    go = {
-      "lang.go",
-    },
-    markdown = {
-      "lang.markdown",
-    },
+    go = true,
+    markdown = true,
     json = {
       "sortjson",
     },
@@ -85,8 +91,13 @@ local all = {
 
 for topic, modules in pairs(all) do
   for mod_name, plugs in pairs(modules) do
-    for i, plug in ipairs(plugs) do
-      spec("plugins." .. plug)
+    if type(plugs) == "boolean" and plugs == true then
+      spec("plugins." .. topic .. "." .. mod_name)
+    end
+    if type(plugs) == "table" and vim.islist(plugs) then
+      for _, plug in ipairs(plugs) do
+        spec("plugins." .. plug)
+      end
     end
   end
 end
