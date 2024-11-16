@@ -16,7 +16,7 @@ return {
     vim.api.nvim_create_autocmd({ "FileType" }, {
       pattern = "*",
       callback = function()
-        local opts = { buffer = true }
+        local opts = { buffer = true, desc = "Split/Join" }
         if require("treesj.langs")["presets"][vim.bo.filetype] then
           vim.keymap.set("n", "gmm", "<cmd>TSJToggle<cr>", opts)
           vim.keymap.set("n", "gmM", function()

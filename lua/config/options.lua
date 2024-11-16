@@ -6,7 +6,7 @@
 vim.g.maplocalleader = ","
 -- vim.g.autoformat = false
 
-local o = vim.opt
+local o = vim.o
 
 o.clipboard = ""
 o.mouse = "nvi"

@@ -23,12 +23,12 @@ return {
         sources = {
           path = {
             relative_to = function(buf, win)
-              local pwd_root = vim.fs.root(vim.env.PWD, { ".git" })
+              local cwd_root = vim.fs.root(vim.uv.cwd(), { ".git" })
               local buf_root = vim.fs.root(buf, { ".git" })
-              if pwd_root == buf_root then
-                return pwd_root or vim.env.PWD
+              if cwd_root == buf_root then
+                return cwd_root or vim.uv.cwd()
               else
-                return buf_root and vim.fs.dirname(buf_root) or vim.env.PWD
+                return buf_root and vim.fs.dirname(buf_root) or vim.uv.cwd()
               end
             end,
           },
