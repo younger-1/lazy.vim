@@ -11,7 +11,9 @@ map("x", "Y", '"+y')
 map("x", "d", '"_d')
 
 map("i", "<C-v>", "<C-g>u<C-r><C-o>+")
+map("i", "<A-v>", "<C-g>u<C-r><C-o>+")
 map("c", "<C-v>", "<C-r>+")
+map("c", "<A-v>", "<C-r>+")
 
 -- map("", "<tab>", "%", { remap = true })
 -- map("", "<S-tab>", "g%", { remap = true })
@@ -27,6 +29,11 @@ map("!", "<C-b>", "<Left>")
 map("!", "<A-f>", "<S-Right>")
 map("!", "<A-b>", "<S-Left>")
 map("!", "<C-d>", "<Del>")
+
+map("!", "<C-j>", "<C-n>")
+map("!", "<C-k>", "<C-p>")
+map("c", "<A-n>", "<Down>") -- search next history
+map("c", "<A-p>", "<Up>") -- search prev history
 
 map("n", "<C-q>", "<cmd>copen<cr>")
 map("n", "<C-z>", "<cmd>lopen<cr>")

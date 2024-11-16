@@ -18,6 +18,7 @@ local all = {
     },
     motion = {
       "matchup",
+      "flash",
     },
   },
   ui = {

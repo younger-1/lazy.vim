@@ -14,8 +14,32 @@ return {
           },
           mappings = {
             i = {
-              ["<A-n>"] = actions.cycle_history_next,
-              ["<A-p>"] = actions.cycle_history_prev,
+              ["<C-_>"] = {
+                require("telescope.actions.generate").which_key({
+                  keybind_width = 10,
+                  separator = " ",
+                  close_with_action = false,
+                }),
+                type = "action", -- 'action_key', 'command'
+                opts = { desc = "which_key" }, -- 'which_key', 'nop'
+              },
+
+              --  NOTE: disabled key
+              -- ['<C-n>'] = false,
+              -- ['<C-p>'] = false,
+              ["<C-f>"] = false,
+              ["<C-b>"] = false,
+              ["<A-f>"] = false,
+              ["<A-b>"] = false,
+
+              ["<C-v>"] = { actions.select_vertical, type = "action", opts = { desc = "nop" } },
+              ["<C-s>"] = { actions.select_horizontal, type = "action", opts = { desc = "nop" } },
+
+              ["<C-j>"] = { actions.move_selection_next, type = "action", opts = { desc = "nop" } },
+              ["<C-k>"] = { actions.move_selection_previous, type = "action", opts = { desc = "nop" } },
+
+              ["<A-n>"] = { actions.cycle_history_next, type = "action", opts = { desc = "nop" } },
+              ["<A-p>"] = { actions.cycle_history_prev, type = "action", opts = { desc = "nop" } },
 
               ["<A-j>"] = { actions.results_scrolling_down, type = "action", opts = { desc = "nop" } },
               ["<A-k>"] = { actions.results_scrolling_up, type = "action", opts = { desc = "nop" } },
