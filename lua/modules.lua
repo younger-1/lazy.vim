@@ -30,6 +30,13 @@ local all = {
       "matchup",
       "flash",
     },
+    project = {
+      "project",
+      "telescope-project",
+    },
+    session = {
+      "persistence",
+    },
   },
   ui = {
     bufferline = {
