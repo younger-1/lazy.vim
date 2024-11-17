@@ -61,6 +61,10 @@ local all = {
     window = {
       "winsep",
     },
+    indent = {
+      "mini.indentscope",
+      -- "hlchunk",
+    },
   },
   coding = {
     lsp = {
