@@ -23,8 +23,10 @@ return {
         sources = {
           path = {
             relative_to = function(buf, win)
-              local cwd_root = vim.fs.root(vim.uv.cwd(), { ".git" })
-              local buf_root = vim.fs.root(buf, { ".git" })
+              -- local cwd_root = vim.fs.root(vim.uv.cwd(), { ".git" })
+              -- local buf_root = vim.fs.root(buf, { ".git" })
+              local cwd_root = LazyVim.root.cwd()
+              local buf_root = LazyVim.root.get({ buf = buf })
               if cwd_root == buf_root then
                 return cwd_root or vim.uv.cwd()
               else
