@@ -39,6 +39,9 @@ local all = {
     },
   },
   ui = {
+    statusline = {
+      "lualine",
+    },
     bufferline = {
       "bufferline",
     },

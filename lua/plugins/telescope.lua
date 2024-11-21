@@ -101,7 +101,7 @@ return {
         mode = "x",
         "<leader>sg",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = LazyVim.root(),
           })
@@ -113,7 +113,7 @@ return {
         mode = "x",
         "<leader>sG",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({})
           vim.fn.feedkeys(text)
         end,
@@ -147,7 +147,7 @@ return {
         function()
           require("telescope.builtin").grep_string({
             cwd = LazyVim.root(),
-            search = require("util").get_visual_selection(),
+            search = U.get_visual_selection(),
           })
         end,
         desc = "Word (root)",
@@ -157,7 +157,7 @@ return {
         "<leader>sW",
         function()
           require("telescope.builtin").grep_string({
-            search = require("util").get_visual_selection(),
+            search = U.get_visual_selection(),
           })
         end,
         desc = "Word (cwd)",
@@ -185,7 +185,7 @@ return {
         mode = "x",
         "<leader>ff",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = LazyVim.root(),
           })
@@ -197,7 +197,7 @@ return {
         mode = "x",
         "<leader>fF",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({})
           vim.fn.feedkeys(text)
         end,
@@ -304,7 +304,7 @@ return {
         mode = "x",
         "<leader>yc",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = vim.fn.stdpath("config"),
           })
@@ -316,7 +316,7 @@ return {
         mode = "x",
         "<leader>yC",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = vim.fn.stdpath("config"),
           })
@@ -349,7 +349,7 @@ return {
         mode = "x",
         "<leader>yy",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/nvim",
           })
@@ -361,7 +361,7 @@ return {
         mode = "x",
         "<leader>yY",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/nvim",
           })
@@ -394,7 +394,7 @@ return {
         mode = "x",
         "<leader>yz",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/lazy",
           })
@@ -406,7 +406,7 @@ return {
         mode = "x",
         "<leader>yZ",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/lazy",
           })
@@ -439,7 +439,7 @@ return {
         mode = "x",
         "<leader>ya",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/astro",
           })
@@ -451,7 +451,7 @@ return {
         mode = "x",
         "<leader>yA",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/astro",
           })
@@ -484,7 +484,7 @@ return {
         mode = "x",
         "<leader>yx",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = require("lazy.core.config").options.root,
           })
@@ -496,7 +496,7 @@ return {
         mode = "x",
         "<leader>yX",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = require("lazy.core.config").options.root,
           })
@@ -521,7 +521,7 @@ return {
         mode = "x",
         "<leader>yl",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = LazyVim.get_plugin_path("LazyVim"),
           })
@@ -533,7 +533,7 @@ return {
         mode = "x",
         "<leader>yL",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = LazyVim.get_plugin_path("LazyVim"),
           })
@@ -566,7 +566,7 @@ return {
         mode = "x",
         "<leader>yv",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
             cwd = vim.env.VIMRUNTIME,
           })
@@ -578,7 +578,7 @@ return {
         mode = "x",
         "<leader>yV",
         function()
-          local text = require("util").get_visual_selection()
+          local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
             cwd = vim.env.VIMRUNTIME,
           })

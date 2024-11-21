@@ -76,7 +76,7 @@ return {
 
       -- Gain better performance when moving the cursor around
       vim.api.nvim_create_autocmd({
-        require("util").has("nvim-0.9") and "WinResized" or "WinScrolled",
+        U.has("nvim-0.9") and "WinResized" or "WinScrolled",
         "CursorHold",
         "BufWinEnter",
         "InsertLeave",

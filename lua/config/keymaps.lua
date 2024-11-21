@@ -61,11 +61,11 @@ map("n", [[\z]], "<cmd>stop<cr>")
 map({ "n", "x" }, [[\s]], ":so<cr>")
 
 map("x", [[\p]], function()
-  local text = require("util").get_visual_selection()
+  local text = U.get_visual_selection()
   vim.fn.feedkeys(vim.keycode("<Esc>") .. ":=" .. text, "n")
 end, { desc = "Inspect (=)" })
 map("x", [[\l]], function()
-  local text = require("util").get_visual_selection()
+  local text = U.get_visual_selection()
   vim.fn.feedkeys(vim.keycode("<Esc>") .. ":lua " .. text, "n")
 end, { desc = "Inspect (lua)" })
 
