@@ -37,6 +37,9 @@ local all = {
     session = {
       "persistence",
     },
+    option = {
+      "guess-indent",
+    },
   },
   ui = {
     statusline = {
