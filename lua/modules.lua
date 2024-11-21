@@ -46,6 +46,9 @@ local all = {
       "dropbar",
       "navic",
     },
+    cmdline = {
+      "noice",
+    },
     buffer = {
       -- work with familiar project
       "harpoon",
