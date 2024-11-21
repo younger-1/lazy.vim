@@ -5,7 +5,18 @@ return {
     keys = {
       { "<tab>", "%", remap = true, mode = { "n", "x", "o" } },
       { "<S-tab>", "g%", remap = true, mode = { "n", "x", "o" } },
-      { "<C-y>", "<cmd>MatchupWhereAmI?<cr>" },
+      -- { "<C-y>", "<cmd>MatchupWhereAmI?<cr>", mode = { "n", "i" } },
+      {
+        "<C-y>",
+        function()
+          vim.cmd("silent! NoiceDisable")
+          vim.cmd("MatchupWhereAmI?")
+          vim.schedule(function()
+            vim.cmd("silent! NoiceEnable")
+          end)
+        end,
+        mode = { "n", "i" },
+      },
     },
     init = function()
       -- Do not use builtin matchit.vim and matchparen.vim since we use vim-matchup
