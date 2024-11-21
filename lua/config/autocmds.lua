@@ -15,8 +15,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
+  desc = "close with <q>",
   group = augroup("close_with_q"),
   pattern = {
     "help",
@@ -29,5 +29,27 @@ vim.api.nvim_create_autocmd("FileType", {
         desc = "Quit buffer",
       })
     end)
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "go: set local option",
+  group = augroup("go_option"),
+  pattern = {
+    "go",
+  },
+  callback = function(event)
+    vim.bo.tabstop = 4
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "lua: set local option",
+  group = augroup("lua_option"),
+  pattern = {
+    "lua",
+  },
+  callback = function(event)
+    vim.bo.keywordprg = ":help"
   end,
 })
