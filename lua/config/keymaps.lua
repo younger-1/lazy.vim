@@ -43,6 +43,25 @@ map("t", "JK", "<C-\\><C-n>")
 map("c", "<A-n>", "<Down>")
 map("c", "<A-p>", "<Up>")
 
+-- Diagnostics
+map("n", "gl", function()
+  vim.diagnostic.open_float({ scope = "line", source = true })
+end, { desc = "Line diagnostic" })
+
+map("n", "]e", function()
+  vim.diagnostic.goto_next()
+end, { desc = "Next diagnostic" })
+map("n", "[e", function()
+  vim.diagnostic.goto_prev()
+end, { desc = "Prev diagnostic" })
+
+map("n", "]E", function()
+  vim.diagnostic.goto_next()
+end, { desc = "Next error" })
+map("n", "[E", function()
+  vim.diagnostic.goto_prev()
+end, { desc = "Prev error" })
+
 -- Advanced
 map("n", [[\\]], "<C-W>s", { desc = "Split window below", remap = true })
 map("n", [[||]], "<C-W>v", { desc = "Split window right", remap = true })

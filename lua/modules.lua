@@ -18,7 +18,7 @@ end
 -- spec("plugins.bufferline")
 -- spec("plugins.colorscheme")
 
----@alias module table
+---@type table<string, table<string,string[]|boolean> >
 local all = {
   editor = {
     core = {
