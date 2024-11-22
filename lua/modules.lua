@@ -8,17 +8,18 @@ LAZY_PLUGIN_SPEC = {
   { import = "lazyvim.plugins.extras.lang.java" },
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.lang.toml" },
+  { import = "lazyvim.plugins.extras.util.dot" },
 }
 
 local function spec(item)
-  table.insert(LAZY_PLUGIN_SPEC, { import = item })
+  if type(item) == "string" then
+    table.insert(LAZY_PLUGIN_SPEC, { import = "plugins." .. item })
+  elseif type(item) == "table" then
+    table.insert(LAZY_PLUGIN_SPEC, item)
+  end
 end
 
--- spec("plugins.lazyvim")
--- spec("plugins.bufferline")
--- spec("plugins.colorscheme")
-
----@type table<string, table<string,string[]|boolean> >
+---@type table<string, table<string, (string|LazyPluginSpec|LazySpecImport)[]|boolean>>
 local all = {
   editor = {
     core = {
@@ -82,6 +83,9 @@ local all = {
       "mini.indentscope",
       -- "hlchunk",
     },
+    cursor = {
+      -- "mini.animate",
+    },
   },
   coding = {
     lsp = {
@@ -112,12 +116,12 @@ local all = {
 
 for topic, modules in pairs(all) do
   for mod_name, plugs in pairs(modules) do
-    if type(plugs) == "boolean" and plugs == true then
-      spec("plugins." .. topic .. "." .. mod_name)
+    if type(plugs) == "boolean" and plugs then
+      spec(topic .. "." .. mod_name)
     end
     if type(plugs) == "table" and vim.islist(plugs) then
       for _, plug in ipairs(plugs) do
-        spec("plugins." .. plug)
+        spec(plug)
       end
     end
   end
