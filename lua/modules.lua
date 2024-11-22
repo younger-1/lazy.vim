@@ -62,6 +62,7 @@ local all = {
       "snipe",
     },
     file = {
+      "neo-tree",
       "mini.files",
     },
   },

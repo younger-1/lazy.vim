@@ -15,7 +15,7 @@ return {
           -- display info
           LazyVim.info({ "Path added:\n", vim.fn.fnamemodify(r, ":~") }, { title = "Project" })
         end,
-        desc = "Projects",
+        desc = "Add roject",
       },
     },
   },
