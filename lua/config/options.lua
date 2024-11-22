@@ -27,3 +27,10 @@ o.linebreak = true
 o.breakindent = true
 -- o.breakindentopt = { "sbr" }
 o.showbreak = "↪ "
+
+o.diffopt:append({
+  "vertical",
+  "indent-heuristic", -- make vimdiff more closely match git diff
+  "algorithm:patience",
+  "linematch:60", -- nvim-0.9
+})
