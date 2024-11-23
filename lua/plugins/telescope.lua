@@ -76,8 +76,55 @@ return {
     end,
 
     keys = {
-      { "<leader>s<space>", "<cmd>Telescope resume<cr>", desc = "Resume" },
-      { "<leader>su", "<cmd>Telescope pickers<cr>", desc = "Pickers" },
+      { "<leader>s<space>", "<cmd>Telescope pickers<cr>", desc = "󰚾" },
+      { "<leader>su", "<cmd>Telescope resume<cr>", desc = "" },
+      { "<leader>s<tab>", "<cmd>Telescope builtin<cr>", desc = "Builtin " },
+      { "<leader>s<cr>", "<cmd>Telescope builtin include_extensions=true<cr>", desc = "All " },
+      --
+      -- misc
+      --
+      { "<leader>s'", "<cmd>Telescope marks<cr>", desc = "Mark" },
+      { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Register" },
+      { "<leader>s-", "<cmd>Telescope reloader<cr>", desc = "Reload module" },
+      { "<leader>s=", "<cmd>Telescope spell_suggest<cr>" },
+      { ";", "<cmd>Telescope commands<cr>" },
+      {
+        "<leader>s;",
+        function()
+          require("telescope.builtin").command_history({
+            prompt_prefix = "$ ",
+            filter_fn = function(item)
+              -- local ignored_pattern = vim.regex([[^\s]]) -- TODO: fix upstream, not trim prefix space
+              local ignored_pattern = vim.regex([[\s$]])
+              if #item < 3 then
+                return false
+              else
+                return not ignored_pattern:match_str(item)
+              end
+            end,
+          })
+        end,
+        desc = "Command history",
+      },
+      {
+        "<leader>s/",
+        function()
+          require("telescope.builtin").search_history({
+            prompt_prefix = "/ ",
+            filter_fn = function(item)
+              if #item < 3 then
+                return false
+              else
+                return true
+              end
+            end,
+          })
+        end,
+        desc = "Search history",
+      },
+      { "<leader>s<C-q>", "<cmd>Telescope quickfix<cr>", "Quick list" },
+      { "<leader>s<C-z>", "<cmd>Telescope loclist<cr>", "Loc list" },
+      { "<leader>sq", "<cmd>Telescope quickfixhistory<cr>", "QuickList history" },
       --
       -- search
       --
