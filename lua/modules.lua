@@ -66,6 +66,14 @@ local all = {
       "neo-tree",
       "mini.files",
     },
+    screen = {
+      {
+        "nvimdev/dashboard-nvim",
+        keys = {
+          { "<leader><bs>", "<cmd>Dashboard<cr>" },
+        },
+      },
+    },
   },
   appearance = {
     dim = {
@@ -95,6 +103,21 @@ local all = {
     treesitter = {
       "treesj",
       -- "treesitter.refactor",
+    },
+    jump = {
+      {
+        "pechorin/any-jump.vim",
+        cmd = { "AnyJump", "AnyJumpVisual", "AnyJumpArg" },
+        keys = {
+          { "go", ":AnyJump<cr>" },
+          { "go", ":AnyJumpVisual<cr>", mode = "v" },
+          { "gob", ":AnyJumpBack<cr>" },
+          { "gol", ":AnyJumpLastResults<cr>" },
+        },
+        init = function()
+          vim.g.any_jump_disable_default_keybindings = 1
+        end,
+      },
     },
   },
   lang = {

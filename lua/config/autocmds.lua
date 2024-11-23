@@ -58,9 +58,9 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "add border to float window",
   group = augroup("add_border"),
   pattern = {
-    "any-jump",
     "lazy",
     "mason",
+    "any-jump",
   },
   callback = function(event)
     vim.api.nvim_win_set_config(0, { border = "rounded" })

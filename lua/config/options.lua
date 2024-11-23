@@ -12,6 +12,8 @@ o.clipboard = ""
 
 o.mouse = "nvi"
 
+o.confirm = true -- show confirm dialog instead of error msg
+
 o.autoindent = true
 o.smartindent = true
 
@@ -27,6 +29,17 @@ o.linebreak = true
 o.breakindent = true
 -- o.breakindentopt = { "sbr" }
 o.showbreak = "↪ "
+
+o.list = true
+o.listchars = {
+  tab = "│",
+  -- eol = "↲",
+  -- space = "•",
+  trail = "■",
+  extends = "»",
+  precedes = "«",
+  nbsp = "⦸",
+}
 
 o.diffopt:append({
   "vertical",
