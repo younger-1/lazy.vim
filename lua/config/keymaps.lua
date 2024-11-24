@@ -89,7 +89,7 @@ map("x", [[\l]], function()
 end, { desc = "Inspect (lua)" })
 
 -- Leader
-map("n", "<leader>`", "<cmd>intro<cr>") -- TODO: Bug report
+map("n", "<leader>`", "<cmd>intro<cr>") -- FIXME:NoiceDisable
 map("n", "<leader><cr>", "<cmd>message<cr>")
 
 map("n", "<leader>vi", "<cmd>Inspect<cr>")

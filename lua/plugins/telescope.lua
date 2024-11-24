@@ -76,6 +76,42 @@ return {
     end,
 
     keys = {
+      --
+      -- basic
+      --
+      {
+        "<leader><space>",
+        function()
+          require("telescope.builtin").find_files({
+            cwd = LazyVim.root(),
+            follow = true,
+            hidden = true,
+            no_ignore = true,
+          })
+        end,
+        desc = "Files (with ignored)",
+      },
+      {
+        "<leader>/",
+        function()
+          require("telescope.builtin").live_grep({
+            cwd = LazyVim.root(),
+            additional_args = {
+              "-F", -- "--fixed-strings"
+            },
+          })
+        end,
+        desc = "Grep (no regex)",
+      },
+      {
+        "<leader>,",
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>",
+        desc = "Buffers",
+      },
+      { "<leader>;", "<cmd>Telescope commands<cr>" },
+      --
+      -- core
+      --
       { "<leader>s<space>", "<cmd>Telescope pickers<cr>", desc = "󰚾" },
       { "<leader>su", "<cmd>Telescope resume<cr>", desc = "" },
       { "<leader>s<tab>", "<cmd>Telescope builtin<cr>", desc = "Builtin " },
@@ -87,7 +123,6 @@ return {
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Register" },
       { "<leader>s-", "<cmd>Telescope reloader<cr>", desc = "Reload module" },
       { "<leader>s=", "<cmd>Telescope spell_suggest<cr>" },
-      { ";", "<cmd>Telescope commands<cr>" },
       {
         "<leader>s;",
         function()

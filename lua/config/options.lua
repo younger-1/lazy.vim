@@ -47,3 +47,7 @@ o.diffopt:append({
   "algorithm:patience",
   "linematch:60", -- nvim-0.9
 })
+
+o.fillchars:append({
+  msgsep = "─",
+})
