@@ -132,5 +132,5 @@ command_alias("=", "lua")
 -- command_alias("h", "vert h")
 command_alias("!", "terminal")
 
-command_alias("git", "Git")
-command_alias("man", "Man")
+-- command_alias("git", "Git")
+-- command_alias("man", "Man")

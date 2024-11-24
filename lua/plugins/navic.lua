@@ -28,10 +28,7 @@ return {
     "SmiteshP/nvim-navbuddy",
     event = "LspAttach",
     keys = {
-      {
-        "g<space>",
-        "<cmd>Navbuddy<cr>",
-      },
+      { "g<space>", "<cmd>Navbuddy<cr>" },
     },
     dependencies = {
       "SmiteshP/nvim-navic",

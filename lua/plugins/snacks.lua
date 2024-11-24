@@ -29,15 +29,16 @@ return {
   },
   ---@type snacks.Config
   opts = {
+    styles = {
+      notification = {
+        wo = { wrap = true }, -- wrap long notifications
+      },
+    },
+    --
     statuscolumn = {
       folds = {
         open = true, -- show open fold icons
         git_hl = true, -- use gitsigns hl for fold icons
-      },
-    },
-    styles = {
-      notification = {
-        wo = { wrap = true }, -- wrap long notifications
       },
     },
   },

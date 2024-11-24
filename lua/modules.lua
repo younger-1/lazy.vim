@@ -67,12 +67,8 @@ local all = {
       "mini.files",
     },
     screen = {
-      {
-        "nvimdev/dashboard-nvim",
-        keys = {
-          { "<leader><bs>", "<cmd>Dashboard<cr>" },
-        },
-      },
+      -- "dashboard",
+      "snacks.dashboard",
     },
   },
   appearance = {
