@@ -89,6 +89,8 @@ local all = {
     },
     cursor = {
       -- "mini.animate",
+      -- "smear-cursor",
+      "neoscroll",
     },
   },
   coding = {
