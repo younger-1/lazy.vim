@@ -6,8 +6,10 @@ LAZY_PLUGIN_SPEC = {
   { import = "lazyvim.plugins.extras.ui.treesitter-context" },
   { import = "lazyvim.plugins.extras.lang.clangd" },
   { import = "lazyvim.plugins.extras.lang.java" },
+  { import = "lazyvim.plugins.extras.lang.zig" },
   { import = "lazyvim.plugins.extras.lang.json" },
   { import = "lazyvim.plugins.extras.lang.toml" },
+  { import = "lazyvim.plugins.extras.lang.yaml" },
   { import = "lazyvim.plugins.extras.util.dot" },
 }
 
@@ -90,7 +92,7 @@ local all = {
     cursor = {
       -- "mini.animate",
       -- "smear-cursor",
-      "neoscroll",
+      -- "neoscroll",
     },
   },
   coding = {
@@ -121,6 +123,7 @@ local all = {
   lang = {
     go = true,
     markdown = true,
+    ziggy = true,
     json = {
       "sortjson",
     },
