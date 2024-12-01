@@ -132,6 +132,7 @@ local all = {
     git = {
       "gitsigns",
       "blame",
+      "gitgraph",
     },
     diff = {
       "linediff",
