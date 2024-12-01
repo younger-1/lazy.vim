@@ -133,6 +133,7 @@ local all = {
       "gitsigns",
       "blame",
       "gitgraph",
+      "diffview",
     },
     diff = {
       "linediff",
