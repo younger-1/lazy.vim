@@ -131,6 +131,7 @@ local all = {
   tool = {
     git = {
       "gitsigns",
+      "blame",
     },
     diff = {
       "linediff",
