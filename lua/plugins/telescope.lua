@@ -352,7 +352,8 @@ return {
         mode = "x",
         "<leader>gl",
         function()
-          -- vim.fn.feedkeys(vim.keycode("<Esc>"))
+          -- vim.fn.feedkeys(vim.keycode("<Esc>"), "n")
+          vim.cmd([[exe "normal! \<Esc>"]])
           require("telescope.builtin").git_bcommits_range({
             from = vim.fn.line("'<"),
             to = vim.fn.line("'>"),

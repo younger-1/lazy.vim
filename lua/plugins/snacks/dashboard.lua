@@ -37,7 +37,7 @@ return {
           {
             {
               pane = 2,
-              title = "Keep Calm",
+              title = "🚀",
               padding = 1,
               align = "center",
             },

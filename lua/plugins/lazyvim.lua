@@ -25,6 +25,7 @@ return {
       { "<leader>li", "<cmd>LspInfo<cr>" },
       { "<leader>lI", "<cmd>LspInstall<cr>" },
       { "<leader>lm", "<cmd>Mason<cr>" },
+      { "<leader>lc", "<cmd>ConformInfo<cr>" },
     },
   },
 }
