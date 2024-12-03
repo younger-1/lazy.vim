@@ -134,6 +134,8 @@ local all = {
       "blame",
       "gitgraph",
       "diffview",
+      "neogit",
+      "flog",
     },
     diff = {
       "linediff",

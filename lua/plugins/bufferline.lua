@@ -1,6 +1,7 @@
 return {
   {
     "akinsho/bufferline.nvim",
+    -- event = "LazyFile",
     keys = {
       {
         "<BS>",

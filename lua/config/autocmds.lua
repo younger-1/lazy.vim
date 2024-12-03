@@ -9,7 +9,9 @@ end
 
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("wrap_spell"),
-  pattern = { "markdown" },
+  pattern = {
+    "markdown",
+  },
   callback = function()
     vim.opt_local.wrap = false
   end,
@@ -20,6 +22,10 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
     "help",
+    "git",
+    "fugitive",
+    "floggraph",
+    "gitgraph",
   },
   callback = function(event)
     vim.schedule(function()
@@ -29,6 +35,19 @@ vim.api.nvim_create_autocmd("FileType", {
         desc = "Quit buffer",
       })
     end)
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "enable show and switch to some special buffer",
+  group = augroup("enabl_show_switch_special_buf"),
+  pattern = {
+    "floggraph",
+    "gitgraph",
+  },
+  callback = function(event)
+    vim.bo.buflisted = true
+    vim.bo.bufhidden = "hide"
   end,
 })
 
