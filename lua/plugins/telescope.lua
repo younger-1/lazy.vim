@@ -869,4 +869,10 @@ return {
       },
     },
   },
+  {
+    "catgoose/telescope-helpgrep.nvim",
+    keys = {
+      { "<leader>s?", "<cmd>Telescope helpgrep<cr>", desc = "Help grep" },
+    },
+  },
 }

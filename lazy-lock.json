@@ -68,6 +68,7 @@
   "sqlite.lua": { "branch": "master", "commit": "d0ffd703b56d090d213b497ed4eb840495f14a11" },
   "telescope-env.nvim": { "branch": "master", "commit": "00a703cc7b713cdda0a981d88fddf3ce25502af5" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
+  "telescope-helpgrep.nvim": { "branch": "main", "commit": "641b2f1b4559a67731dc42fd84203817ebd6e2ce" },
   "telescope-lazy.nvim": { "branch": "main", "commit": "810f7859c98e88b9c4e45de16cb5317207c9b3e8" },
   "telescope-project.nvim": { "branch": "master", "commit": "1d7920e799fc5001dffc7bd10909a86e0358eaf4" },
   "telescope-smart-history.nvim": { "branch": "master", "commit": "81a4cceaa54d65d5f7c7c26178ee63b634d3e26d" },
