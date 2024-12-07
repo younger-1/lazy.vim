@@ -32,6 +32,8 @@ local all = {
     motion = {
       "matchup",
       "flash",
+      -- move by subwords and skip insignificant punctuation.
+      "spider",
     },
     project = {
       "project",
