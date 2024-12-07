@@ -122,7 +122,7 @@ return {
       { "<leader>s'", "<cmd>Telescope marks<cr>", desc = "Mark" },
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Register" },
       { "<leader>s-", "<cmd>Telescope reloader<cr>", desc = "Reload module" },
-      { "<leader>s=", "<cmd>Telescope spell_suggest<cr>" },
+      { "<leader>s=", "<cmd>Telescope spell_suggest<cr>", desc = "Spell suggest" },
       {
         "<leader>s;",
         function()
@@ -157,9 +157,30 @@ return {
         end,
         desc = "Search history",
       },
-      { "<leader>s<C-q>", "<cmd>Telescope quickfix<cr>", "Quick list" },
-      { "<leader>s<C-z>", "<cmd>Telescope loclist<cr>", "Loc list" },
-      { "<leader>sq", "<cmd>Telescope quickfixhistory<cr>", "QuickList history" },
+      { "<leader>s<C-q>", "<cmd>Telescope quickfix<cr>", desc = "Quick list" },
+      { "<leader>s<C-z>", "<cmd>Telescope loclist<cr>", desc = "Loc list" },
+      { "<leader>sq", "<cmd>Telescope quickfixhistory<cr>", desc = "QuickList history" },
+      {
+        "<leader>sk",
+        function()
+          require("telescope.builtin").keymaps({
+            modes = { "n", "i", "c", "x", "o" },
+            show_plug = vim.v.count ~= 0,
+          })
+        end,
+        desc = "Keymaps",
+      },
+      {
+        "<leader>sK",
+        function()
+          require("telescope.builtin").keymaps({
+            only_buf = 1, -- @see[my] https://github.com/nvim-telescope/telescope.nvim/pull/2246
+            modes = { "n", "i", "c", "x", "o" },
+            show_plug = vim.v.count ~= 0,
+          })
+        end,
+        desc = "Keymaps (buf)",
+      },
       --
       -- search
       --

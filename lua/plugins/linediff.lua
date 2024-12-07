@@ -3,9 +3,9 @@ return {
     "AndrewRadev/linediff.vim",
     cmd = { "Linediff", "LinediffAdd", "LinediffShow", "LinediffLast", "LinediffMerge", "LinediffPick" },
     keys = {
-      { "<leader>vld", ":Linediff<cr>", mode = { "v" } },
-      { "<leader>vla", ":LinediffAdd<cr>", mode = { "v" } },
-      { "<leader>vll", ":LinediffLast<cr>", mode = { "v" } },
+      { "<leader>vld", ":Linediff<cr>", mode = { "x" } },
+      { "<leader>vla", ":LinediffAdd<cr>", mode = { "x" } },
+      { "<leader>vll", ":LinediffLast<cr>", mode = { "x" } },
       { "<leader>vls", "<cmd>LinediffShow<cr>" },
       { "<leader>vlm", "<cmd>LinediffMerge<cr>" },
       { "<leader>vlp", "<cmd>LinediffPick<cr>" },

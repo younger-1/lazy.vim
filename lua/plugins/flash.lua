@@ -3,7 +3,7 @@ return {
     "nvim-telescope/telescope.nvim",
     optional = true,
     opts = function(_, opts)
-      local function xy_flash(prompt_bufnr)
+      local function my_flash(prompt_bufnr)
         require("flash").jump({
           pattern = "^",
           label = { after = { 0, 0 } },
@@ -25,10 +25,10 @@ return {
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         mappings = {
           i = {
-            ["<A-s>"] = xy_flash,
-            ["<a-s>"] = xy_flash,
+            ["<A-s>"] = my_flash,
+            ["<a-s>"] = my_flash,
           },
-          n = { s = xy_flash },
+          n = { s = my_flash },
         },
       })
     end,

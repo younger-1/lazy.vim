@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
   desc = "close with <q>",
-  group = augroup("close_with_q"),
+  group = augroup("close_win_or_buf_with_q"),
   pattern = {
     "help",
     "git",
@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "gitgraph",
   },
   callback = function(event)
-    vim.schedule(function()
+    vim.schedule(function() -- NOTE: override lazyvim
       vim.keymap.set("n", "q", "<cmd>QuitWindowOrBuffer<cr>", {
         buffer = event.buf,
         silent = true,

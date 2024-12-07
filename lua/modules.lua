@@ -110,7 +110,7 @@ local all = {
         cmd = { "AnyJump", "AnyJumpVisual", "AnyJumpArg" },
         keys = {
           { "go", ":AnyJump<cr>" },
-          { "go", ":AnyJumpVisual<cr>", mode = "v" },
+          { "go", ":AnyJumpVisual<cr>", mode = "x" },
           { "gob", ":AnyJumpBack<cr>" },
           { "gol", ":AnyJumpLastResults<cr>" },
         },
@@ -142,6 +142,10 @@ local all = {
     },
     search = {
       "telescope",
+      -- search and replace in multiple file
+      "grug-far",
+      -- search and replace in current buffer
+      -- "rip-substitute",
     },
     keymap = {
       "which-key",
