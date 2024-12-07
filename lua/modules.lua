@@ -35,6 +35,9 @@ local all = {
       -- move by subwords and skip insignificant punctuation.
       "spider",
     },
+    change = {
+      "visual-surround",
+    },
     project = {
       "project",
       "telescope-project",
