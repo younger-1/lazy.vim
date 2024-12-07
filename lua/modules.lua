@@ -158,6 +158,9 @@ local all = {
       "which-key",
       "screenkey",
     },
+    icon = {
+      "icon-picker",
+    },
   },
 }
 

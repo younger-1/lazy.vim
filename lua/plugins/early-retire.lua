@@ -3,7 +3,7 @@ return {
     "chrisgrieser/nvim-early-retirement",
     event = "LazyFile",
     opts = {
-      minimumBufferNum = 1,
+      minimumBufferNum = 4, -- remain 3 buffer
     },
   },
 }
