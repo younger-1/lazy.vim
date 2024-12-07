@@ -69,6 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "lua",
   },
   callback = function(event)
+    vim.bo.tabstop = 2
     vim.bo.keywordprg = ":help"
   end,
 })

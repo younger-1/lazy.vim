@@ -61,6 +61,8 @@ local all = {
       "noice",
     },
     buffer = {
+      -- auto close
+      "early-retire",
       -- work with familiar project
       "harpoon",
       -- explore with new project
