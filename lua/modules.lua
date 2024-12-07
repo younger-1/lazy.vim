@@ -153,6 +153,7 @@ local all = {
     },
     keymap = {
       "which-key",
+      "screenkey",
     },
   },
 }
