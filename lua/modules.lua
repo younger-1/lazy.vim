@@ -81,6 +81,9 @@ local all = {
     },
   },
   appearance = {
+    highlight = {
+      "paint",
+    },
     dim = {
       -- "tint",
       -- "vimade",
