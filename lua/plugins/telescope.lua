@@ -174,7 +174,7 @@ return {
         "<leader>sK",
         function()
           require("telescope.builtin").keymaps({
-            only_buf = 1, -- @see[my] https://github.com/nvim-telescope/telescope.nvim/pull/2246
+            only_buf = 1, -- @see(my) https://github.com/nvim-telescope/telescope.nvim/pull/2246
             modes = { "n", "i", "c", "x", "o" },
             show_plug = vim.v.count ~= 0,
           })
