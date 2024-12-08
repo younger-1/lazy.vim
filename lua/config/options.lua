@@ -51,3 +51,5 @@ o.diffopt:append({
 o.fillchars:append({
   msgsep = "─",
 })
+
+o.showtabline = 2

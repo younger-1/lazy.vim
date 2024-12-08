@@ -528,7 +528,7 @@ return {
             cwd = vim.fs.dirname(vim.fn.stdpath("config")) .. "/astro",
           })
         end,
-        desc = "Find lazy file",
+        desc = "Find astro file",
       },
       {
         "<leader>yA",

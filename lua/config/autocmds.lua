@@ -86,3 +86,19 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_win_set_config(0, { border = "rounded" })
   end,
 })
+
+-- vim.api.nvim_create_autocmd({ "BufEnter", "TabEnter" }, {
+--   desc = "show tabline when bufs > 1 or tabs > 1",
+--   pattern = "*",
+--   group = augroup("show_tabline"),
+--   callback = function()
+--     -- if #vim.fn.gettabinfo() then end
+--     vim.schedule(function()
+--       local status = #vim.fn.getbufinfo({ buflisted = 1 }) > 1 and 2 or 1
+--       vim.print(status)
+--       if vim.o.showtabline ~= status then
+--         vim.o.showtabline = status
+--       end
+--     end)
+--   end,
+-- })
