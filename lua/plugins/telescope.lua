@@ -3,6 +3,7 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = function(_, opts)
       local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
       return vim.tbl_deep_extend("force", opts, {
         defaults = {
           cache_picker = {
@@ -69,6 +70,29 @@ return {
 
               ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
               ["<A-z>"] = actions.smart_add_to_loclist + actions.open_loclist,
+
+              ["<CR>"] = {
+                -- @see https://github.com/nvim-telescope/telescope.nvim/issues/1048#issuecomment-2177826003
+                function(prompt_bufnr)
+                  local picker = action_state.get_current_picker(prompt_bufnr)
+                  local multi = picker:get_multi_selection()
+
+                  if vim.tbl_isempty(multi) then
+                    actions.select_default(prompt_bufnr) -- the normal enter behaviour
+                    return
+                  end
+
+                  actions.close(prompt_bufnr)
+                  for _, entry in pairs(multi) do
+                    local file = entry.path or entry.filename or entry.value
+                    if file then
+                      U.open_file(file, entry.lnum, entry.col)
+                    end
+                  end
+                end,
+                type = "action",
+                opts = { desc = "xy_select_multi" },
+              },
             },
           },
         },

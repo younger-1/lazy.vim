@@ -53,3 +53,4 @@ o.fillchars:append({
 })
 
 o.showtabline = 2
+o.laststatus = 3

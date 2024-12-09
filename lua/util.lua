@@ -12,4 +12,18 @@ M.has = function(feature)
   return vim.fn.has(feature) > 0
 end
 
+function M.open_file(file, lnum, col)
+  if vim.fn.bufexists(file) == 1 then
+    vim.cmd.buffer(file)
+    vim.o.buflisted = true
+  else
+    vim.cmd.edit(file)
+  end
+
+  if lnum then
+    col = col or 1
+    vim.cmd(string.format("normal! %dG%d|", lnum, col))
+  end
+end
+
 return M

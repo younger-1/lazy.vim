@@ -98,7 +98,7 @@ return {
       vim.api.nvim_create_autocmd("User", {
         pattern = "MiniFilesBufferCreate",
         callback = function(args)
-          vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "[my] GrugFar dir" })
+          vim.keymap.set("n", "gs", files_grug_far_replace, { buffer = args.data.buf_id, desc = "[xy] GrugFar dir" })
         end,
       })
 
