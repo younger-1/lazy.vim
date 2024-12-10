@@ -79,6 +79,9 @@ local all = {
       -- "dashboard",
       "snacks.dashboard",
     },
+    menu = {
+      "menu",
+    },
   },
   appearance = {
     highlight = {
@@ -131,6 +134,7 @@ local all = {
     },
   },
   lang = {
+    lua = true,
     go = true,
     markdown = true,
     ziggy = true,
@@ -164,6 +168,7 @@ local all = {
     icon = {
       "icon-picker",
     },
+    nvzone = true,
   },
 }
 

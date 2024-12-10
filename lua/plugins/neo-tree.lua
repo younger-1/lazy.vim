@@ -62,4 +62,24 @@ return {
       },
     },
   },
+  {
+    "nvzone/menu",
+    optional = true,
+    opts = {
+      special = {
+        ["neo-tree"] = {
+          {
+            name = "  New file",
+            cmd = function()
+              local source = vim.api.nvim_buf_get_var(0, "neo_tree_source")
+              local winid = vim.api.nvim_get_current_win()
+              local state = require("neo-tree.sources.manager").get_state_for_window(winid)
+              require(("neo-tree.sources.%s.commands"):format(source)).add(state)
+            end,
+            rtxt = "a",
+          },
+        },
+      },
+    },
+  },
 }
