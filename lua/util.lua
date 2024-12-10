@@ -22,7 +22,7 @@ function M.open_file(file, lnum, col)
 
   if lnum then
     col = col or 1
-    vim.cmd(string.format("normal! %dG%d|", lnum, col))
+    vim.api.nvim_win_set_cursor(0, { lnum, col - 1 })
   end
 end
 
