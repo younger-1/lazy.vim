@@ -144,6 +144,9 @@ local all = {
         end,
       },
     },
+    completion = {
+      "cmp",
+    },
   },
   lang = {
     lua = true,
