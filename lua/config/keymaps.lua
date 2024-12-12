@@ -134,3 +134,7 @@ command_alias("!", "terminal")
 
 -- command_alias("git", "Git")
 -- command_alias("man", "Man")
+
+local term = require("tool.term")
+vim.keymap.set("n", "<D-o>", term.toggleterm, { desc = "toggle terminal" })
+vim.keymap.set("t", "<D-o>", term.toggleterm, { buffer = term.buf, desc = "toggle terminal" })
