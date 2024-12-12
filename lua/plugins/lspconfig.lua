@@ -7,6 +7,7 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- stylua: ignore
       vim.list_extend(keys, {
+        { "<leader>cl", false },
         { "K", false },
         { "gh", function() return vim.lsp.buf.hover() end, desc = "Hover" },
       })

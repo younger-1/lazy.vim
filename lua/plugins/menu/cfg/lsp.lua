@@ -1,4 +1,35 @@
-return {
+local spec = vim.list_extend({}, require("lazyvim.plugins.lsp.keymaps").get())
+
+local disabled = {}
+for _, key in ipairs(spec) do
+  if key[2] == false then
+    disabled[key[1]] = true
+  end
+end
+
+local function strip(lhs)
+  if type(lhs) == "function" then
+    return lhs
+  end
+  if vim.startswith(lhs, "<cmd>") then
+    return string.sub(lhs, #"<cmd>" + 1, -#"<cr>" - 1)
+  end
+  return lhs
+end
+
+local items = {}
+for _, key in ipairs(spec) do
+  if not disabled[key[1]] then
+    items[#items + 1] = {
+      name = key.desc,
+      cmd = strip(key[2]),
+      rtxt = key[1],
+    }
+  end
+end
+
+return vim.list_extend(items, {
+  { name = "separator" },
 
   {
     name = "Goto Definition",
@@ -65,4 +96,4 @@ return {
     cmd = vim.lsp.buf.code_action,
     rtxt = "<leader>ca",
   },
-}
+})
