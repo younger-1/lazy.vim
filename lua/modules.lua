@@ -1,19 +1,6 @@
 LAZY_PLUGIN_SPEC = {
   { import = "lazyvim.plugins.extras.coding.mini-surround" },
   { import = "lazyvim.plugins.extras.coding.yanky" },
-  { import = "lazyvim.plugins.extras.editor.illuminate" },
-  {
-    "neovim/nvim-lspconfig",
-    opts = function(_, opts)
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      vim.list_extend(keys, {
-        { "]]", false },
-        { "[[", false },
-        { "<a-n>", false },
-        { "<a-p>", false },
-      })
-    end,
-  },
   { import = "lazyvim.plugins.extras.editor.outline" },
   { import = "lazyvim.plugins.extras.ui.treesitter-context" },
   { import = "lazyvim.plugins.extras.lang.clangd" },
@@ -106,6 +93,7 @@ local all = {
   },
   appearance = {
     highlight = {
+      "illuminate",
       "paint",
     },
     dim = {
@@ -129,7 +117,7 @@ local all = {
       -- "neoscroll",
     },
   },
-  coding = {
+  code = {
     lsp = {
       "lspconfig",
       "trouble",
@@ -138,20 +126,8 @@ local all = {
       "treesj",
       -- "treesitter.refactor",
     },
-    jump = {
-      {
-        "pechorin/any-jump.vim",
-        cmd = { "AnyJump", "AnyJumpVisual", "AnyJumpArg" },
-        keys = {
-          { "go", ":AnyJump<cr>" },
-          { "go", ":AnyJumpVisual<cr>", mode = "x" },
-          { "gob", ":AnyJumpBack<cr>" },
-          { "gol", ":AnyJumpLastResults<cr>" },
-        },
-        init = function()
-          vim.g.any_jump_disable_default_keybindings = 1
-        end,
-      },
+    browsing = {
+      "any-jump",
     },
     completion = {
       "cmp",
@@ -175,6 +151,7 @@ local all = {
       "neogit",
       "flog",
       "fugit2",
+      "tinygit",
     },
     diff = {
       "linediff",
