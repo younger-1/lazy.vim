@@ -40,6 +40,8 @@ local all = {
       "lazyvim",
       "snacks",
       "colorscheme",
+      -- plugin installation system
+      "activate",
     },
     motion = {
       "matchup",
@@ -61,14 +63,16 @@ local all = {
     },
     option = {
       "guess-indent",
+      -- "toggle",
     },
   },
   ui = {
     statusline = {
       "lualine",
     },
-    bufferline = {
+    tabline = {
       "bufferline",
+      -- "buffertabs",
     },
     winbar = {
       "dropbar",

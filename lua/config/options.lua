@@ -54,3 +54,7 @@ o.fillchars:append({
 
 o.showtabline = 2
 o.laststatus = 3
+
+o.shortmess:append({
+  I = false, -- show :intro at startup
+})
