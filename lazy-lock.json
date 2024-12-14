@@ -1,7 +1,7 @@
 {
   "LazyVim": { "branch": "main", "commit": "31af2075423d0e6d3c4f10ab299498471afe4ea0" },
   "SchemaStore.nvim": { "branch": "main", "commit": "f8c2a0f5d51b800ea4625808e243d9e8f7c5e1df" },
-  "activate.nvim": { "branch": "main", "commit": "ab6dd9a5614d904f5388ec95123d4ab80f55feb5" },
+  "activate.nvim": { "branch": "young/feat/use-stdpath", "commit": "57ceda8a72bfa3c496b25885e602b10ca4eb5093" },
   "any-jump.vim": { "branch": "master", "commit": "f95674d9a4251ac02f452d5f1861e4422f4652c7" },
   "barbecue.nvim": { "branch": "main", "commit": "3e31404f0b93a2c30d151abf0648650ac811c664" },
   "blame.nvim": { "branch": "main", "commit": "39bb4cda9e658d053a43919b10ca52c0a4d738e1" },
@@ -74,6 +74,7 @@
   "snipe.nvim": { "branch": "main", "commit": "7d6dc06b90bad922e568f39bdae3d111282c7429" },
   "sortjson.nvim": { "branch": "main", "commit": "5df32e78f97c53b7f3f408da51d60f9529e14936" },
   "sqlite.lua": { "branch": "master", "commit": "d0ffd703b56d090d213b497ed4eb840495f14a11" },
+  "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "telescope-env.nvim": { "branch": "master", "commit": "00a703cc7b713cdda0a981d88fddf3ce25502af5" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope-helpgrep.nvim": { "branch": "main", "commit": "641b2f1b4559a67731dc42fd84203817ebd6e2ce" },

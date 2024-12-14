@@ -1,6 +1,8 @@
 return {
   {
-    "roobert/activate.nvim",
+    -- "roobert/activate.nvim",
+    "younger-1/activate.nvim",
+    branch = "young/feat/use-stdpath",
     dependencies = { "nvim-telescope/telescope.nvim" },
     keys = {
       {
