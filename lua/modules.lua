@@ -174,6 +174,7 @@ local all = {
       "diffview",
       "neogit",
       "flog",
+      "fugit2",
     },
     diff = {
       "linediff",
