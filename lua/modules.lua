@@ -46,7 +46,8 @@ local all = {
     motion = {
       "matchup",
       -- "tabtree",
-      "tabout",
+      -- "tabout",
+      "backout",
       "flash",
       -- move by subwords and skip insignificant punctuation.
       "spider",
