@@ -139,6 +139,9 @@ command_alias("!", "terminal")
 -- command_alias("git", "Git")
 -- command_alias("man", "Man")
 
-local term = require("tool.term")
-vim.keymap.set("n", "<D-o>", term.toggleterm, { desc = "toggle terminal" })
-vim.keymap.set("t", "<D-o>", term.toggleterm, { buffer = term.buf, desc = "toggle terminal" })
+local ft = require("tool.float-term")
+vim.keymap.set("n", "<D-o>", ft.toggleterm, { desc = "Toggle float terminal" })
+vim.keymap.set("t", "<D-o>", ft.toggleterm, { buffer = ft.buf, desc = "Toggle float terminal" })
+
+local t = require("tool.terminal")
+vim.keymap.set({ "n", "t" }, "<C-`>", t.toggle, { desc = "Toggle terminal", silent = true })

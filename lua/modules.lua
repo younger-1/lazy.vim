@@ -124,7 +124,7 @@ local all = {
     },
     treesitter = {
       "treesj",
-      -- "treesitter.refactor",
+      -- "treesitter-refactor",
     },
     browsing = {
       "any-jump",
@@ -170,7 +170,9 @@ local all = {
     icon = {
       "icon-picker",
     },
-    nvzone = true,
+    nvzone = {
+      "nvzone",
+    },
   },
 }
 
