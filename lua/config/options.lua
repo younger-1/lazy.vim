@@ -5,6 +5,7 @@
 
 vim.g.maplocalleader = ","
 -- vim.g.autoformat = false
+vim.g.trouble_lualine = false
 
 local o = vim.opt
 

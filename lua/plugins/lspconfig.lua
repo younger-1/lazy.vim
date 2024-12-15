@@ -8,7 +8,27 @@ return {
       vim.list_extend(keys, {
         { "<leader>cl", false },
         { "K", false },
-        { "gh", function() return vim.lsp.buf.hover() end, desc = "Hover" },
+        { "gh", function() vim.lsp.buf.hover() end, desc = "Hover" },
+        { "<C-w>d", function()
+          vim.cmd.wincmd('o')
+          vim.cmd.vsplit()
+          vim.lsp.buf.definition()
+        end, desc = "Def" },
+        { "<C-w>y", function()
+          vim.cmd.wincmd('o')
+          vim.cmd.vsplit()
+          vim.lsp.buf.type_definition()
+        end, desc = "Type Def" },
+        { "<C-w>i", function()
+          vim.cmd.wincmd('o')
+          vim.cmd.vsplit()
+          vim.lsp.buf.references()
+        end, desc = "Ref" },
+        { "<C-w>I", function()
+          vim.cmd.wincmd('o')
+          vim.cmd.vsplit()
+          vim.lsp.buf.implementation()
+        end, desc = "Impl" },
       })
 
       ---@type PluginLspOpts

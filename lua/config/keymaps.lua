@@ -23,7 +23,7 @@ map("", "<C-i>", "<C-i>")
 -- map({ "n", "i" }, "<C-s>", "<cmd>update<cr>", { desc = "Save File" })
 
 -- better replacement for <C-w>o
-map("n", "<C-w>t", "<cmd>tab split<cr>")
+map("n", "<C-w><tab>", "<cmd>tab split<cr>")
 
 map("!", "<C-a>", "<Home>")
 map("!", "<C-e>", "<End>")
@@ -81,6 +81,7 @@ map("n", [[\W]], "<cmd>wa<cr>")
 map("n", [[\z]], "<cmd>stop<cr>")
 
 map({ "n", "x" }, [[\s]], ":so<cr>")
+map({ "n", "x" }, [[\x]], ":.so<cr>")
 
 map("x", [[\p]], function()
   local text = U.get_visual_selection()
