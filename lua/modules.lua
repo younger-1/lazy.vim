@@ -158,6 +158,7 @@ local all = {
     },
     search = {
       "telescope",
+      "easypick",
       -- search and replace in multiple file
       "grug-far",
       -- search and replace in current buffer
