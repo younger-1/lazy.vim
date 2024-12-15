@@ -1,8 +1,5 @@
 ---@meta
 
----@class PluginLspOpts
----@field diagnostics vim.diagnostic.Opts
-
 ---@generic T
 ---@param method 'keep'|'force' Decides what to do if a key is found in more than one map:
 ---      - "keep":  use value from the leftmost map

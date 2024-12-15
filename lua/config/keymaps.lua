@@ -22,6 +22,9 @@ map("", "<C-i>", "<C-i>")
 -- map("n", "<BS>", "<C-^>")
 -- map({ "n", "i" }, "<C-s>", "<cmd>update<cr>", { desc = "Save File" })
 
+-- better replacement for <C-w>o
+map("n", "<C-w>t", "<cmd>tab split<cr>")
+
 map("!", "<C-a>", "<Home>")
 map("!", "<C-e>", "<End>")
 map("!", "<C-f>", "<Right>")

@@ -2,7 +2,6 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    ---@param opts PluginLspOpts
     opts = function(_, opts)
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- stylua: ignore
@@ -50,6 +49,7 @@ return {
           -- pyright will be automatically installed with mason and loaded with lspconfig
           pyright = {},
         },
+        setup = {},
       }
       return vim.tbl_deep_extend("force", opts, cfg)
     end,

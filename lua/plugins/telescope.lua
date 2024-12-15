@@ -638,12 +638,28 @@ return {
       --
       {
         "<leader>yl",
-        LazyVim.pick("files", { cwd = LazyVim.get_plugin_path("LazyVim") }),
+        function()
+          require("telescope.builtin").find_files({
+            cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim",
+            search_dirs = vim.v.count > 0 and {
+              vim.fn.stdpath("data") .. "/lazy/LazyVim",
+              vim.fn.stdpath("config"),
+            },
+          })
+        end,
         desc = "Find LazyVim file",
       },
       {
         "<leader>yL",
-        LazyVim.pick("live_grep", { cwd = LazyVim.get_plugin_path("LazyVim") }),
+        function()
+          require("telescope.builtin").live_grep({
+            cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim",
+            search_dirs = vim.v.count > 0 and {
+              vim.fn.stdpath("data") .. "/lazy/LazyVim",
+              vim.fn.stdpath("config"),
+            },
+          })
+        end,
         desc = "Search LazyVim file",
       },
       {
@@ -652,7 +668,7 @@ return {
         function()
           local text = U.get_visual_selection()
           require("telescope.builtin").find_files({
-            cwd = LazyVim.get_plugin_path("LazyVim"),
+            cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim",
           })
           vim.fn.feedkeys(text)
         end,
@@ -664,11 +680,64 @@ return {
         function()
           local text = U.get_visual_selection()
           require("telescope.builtin").live_grep({
-            cwd = LazyVim.get_plugin_path("LazyVim"),
+            cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim",
           })
           vim.fn.feedkeys(text)
         end,
         desc = "Search LazyVim file",
+      },
+      --
+      -- AstroNvim
+      --
+      {
+        "<leader>yk",
+        function()
+          require("telescope.builtin").find_files({
+            cwd = vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+            search_dirs = vim.v.count > 0 and {
+              vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+              vim.fn.stdpath("config"),
+            },
+          })
+        end,
+        desc = "Find AstroNvim file",
+      },
+      {
+        "<leader>yk",
+        function()
+          require("telescope.builtin").live_grep({
+            cwd = vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+            search_dirs = vim.v.count > 0 and {
+              vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+              vim.fn.stdpath("config"),
+            },
+          })
+        end,
+        desc = "Search AstroNvim file",
+      },
+      {
+        mode = "x",
+        "<leader>yk",
+        function()
+          local text = U.get_visual_selection()
+          require("telescope.builtin").find_files({
+            cwd = vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+          })
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Find AstroNvim file",
+      },
+      {
+        mode = "x",
+        "<leader>yK",
+        function()
+          local text = U.get_visual_selection()
+          require("telescope.builtin").live_grep({
+            cwd = vim.fn.stdpath("data") .. "/lazy/AstroNvim",
+          })
+          vim.fn.feedkeys(text)
+        end,
+        desc = "Search AstroNvim file",
       },
       --
       -- vim runtime
@@ -714,6 +783,58 @@ return {
           vim.fn.feedkeys(text)
         end,
         desc = "Search vim runtime file",
+      },
+      -- [Advanced telescope.nvim Examples] by TJ DeVries
+      -- @see https://www.youtube.com/watch?v=xdXE1tOT-qg
+      {
+        "<leader>sl",
+        function()
+          local pickers = require("telescope.pickers")
+          local finders = require("telescope.finders")
+          local make_entry = require("telescope.make_entry")
+          local conf = require("telescope.config").values
+
+          local opts = {
+            cwd = LazyVim.root(),
+          }
+
+          local finder = finders.new_async_job({
+            command_generator = function(prompt)
+              if not prompt or prompt == "" then
+                return nil
+              end
+
+              local pieces = vim.split(prompt, "  ") -- NOTE: magic here
+              -- { "rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case" }
+              local args = vim.deepcopy(conf.vimgrep_arguments)
+              -- -e PATTERN, --regexp=PATTERN
+              if pieces[1] then
+                table.insert(args, "-e")
+                table.insert(args, pieces[1])
+              end
+              -- -g GLOB, --glob=GLOB
+              if pieces[2] then
+                table.insert(args, "-g")
+                table.insert(args, pieces[2])
+              end
+
+              return args
+            end,
+            entry_maker = make_entry.gen_from_vimgrep(opts),
+            cwd = opts.cwd,
+          })
+
+          pickers
+            .new(opts, {
+              debounce = 200,
+              prompt_title = "Grep with glob (e.g. xxx  *.lua)",
+              finder = finder,
+              previewer = conf.grep_previewer(opts),
+              sorter = require("telescope.sorters").empty(),
+            })
+            :find()
+        end,
+        desc = "Glob grep",
       },
     },
     dependencies = {
