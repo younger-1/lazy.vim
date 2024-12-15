@@ -132,6 +132,9 @@ local all = {
     completion = {
       "cmp",
     },
+    debug = {
+      "debugprint",
+    },
   },
   lang = {
     lua = true,
