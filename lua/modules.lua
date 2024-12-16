@@ -14,7 +14,8 @@ LAZY_PLUGIN_SPEC = {
 
 local function spec(item)
   if type(item) == "string" then
-    table.insert(LAZY_PLUGIN_SPEC, { import = "plugins." .. item })
+    -- table.insert(LAZY_PLUGIN_SPEC, { import = "plugins." .. item })
+    table.insert(LAZY_PLUGIN_SPEC, require("plugins." .. item))
   elseif type(item) == "table" then
     table.insert(LAZY_PLUGIN_SPEC, item)
   end

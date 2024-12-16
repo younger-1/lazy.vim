@@ -24,7 +24,7 @@ return {
   {
     name = "  Lsp Actions",
     hl = "Exblue",
-    items = require("plugins.menu.cfg.lsp"),
+    items = require("plugins.menu.lsp"),
   },
 
   { name = "separator" },

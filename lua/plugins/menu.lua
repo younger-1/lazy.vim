@@ -8,10 +8,11 @@ return {
   opts_extend = { "common" },
   opts = {
     special = {},
-    common = require("plugins.menu.cfg.common"),
+    common = {},
     ft = {},
   },
   config = function(_, opts)
+    opts.common = require("plugins.menu.common")
     local function open_menu(mouse)
       local items = vim.deepcopy(opts.special[vim.bo.ft] or opts.common)
       if opts.ft[vim.bo.ft] then
