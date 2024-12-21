@@ -54,7 +54,11 @@ local all = {
     },
     option = {
       "guess-indent",
+      -- "dansa",
       -- "toggle",
+      {
+        "hrsh7th/nvim-kit",
+      },
     },
   },
   ui = {
@@ -156,6 +160,8 @@ local all = {
       "flog",
       "fugit2",
       "tinygit",
+      "gitlinker",
+      "gitportal",
     },
     diff = {
       "linediff",
