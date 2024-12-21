@@ -160,7 +160,7 @@ local all = {
       "flog",
       "fugit2",
       "tinygit",
-      "gitlinker",
+      -- "gitlinker",
       "gitportal",
     },
     diff = {
@@ -184,6 +184,11 @@ local all = {
     },
     nvzone = {
       "nvzone",
+    },
+    undo = {
+      "undotree",
+      "telescope-undo",
+      -- "fundo",
     },
   },
 }

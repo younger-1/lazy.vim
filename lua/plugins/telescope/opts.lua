@@ -2,6 +2,8 @@ return function(_, opts)
   local actions = require("telescope.actions")
   return vim.tbl_deep_extend("force", opts, {
     defaults = {
+      -- layout_config = { prompt_position = "top" },
+      -- sorting_strategy = "ascending",
       cache_picker = {
         num_pickers = 20,
       },
@@ -92,6 +94,35 @@ return function(_, opts)
           },
         },
       },
+    },
+    pickers = {
+      -- @see https://www.reddit.com/r/neovim/comments/1hdwv63/a_tip_to_improve_telescope_find_files_experience/
+      -- You can still add a space, turn the exact match into fuzzy match.
+      -- find_files = {
+      --   default_text = "'", -- exact match, instead of fuzzy match
+      --   on_complete = { -- delete the exact match mark if there is no result
+      --     function()
+      --       vim.schedule(function()
+      --         local action_state = require("telescope.actions.state")
+      --         local prompt_bufnr = require("telescope.state").get_existing_prompt_bufnrs()[1]
+      --
+      --         local picker = action_state.get_current_picker(prompt_bufnr)
+      --         if picker == nil then
+      --           return
+      --         end
+      --         local results = picker.layout.results
+      --         local bufnr = results.bufnr
+      --         local winid = results.winid
+      --         local count = vim.api.nvim_buf_line_count(bufnr)
+      --         if count == 1 and vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)[1] == "" then
+      --           local line = vim.api.nvim_buf_get_lines(prompt_bufnr, 0, -1, false)[1]
+      --           local new_line = line:gsub("'", " ")
+      --           vim.api.nvim_buf_set_lines(prompt_bufnr, 0, -1, false, { new_line })
+      --         end
+      --       end)
+      --     end,
+      --   },
+      -- },
     },
   })
 end
