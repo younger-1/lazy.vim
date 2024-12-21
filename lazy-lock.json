@@ -53,6 +53,7 @@
   "noice.nvim": { "branch": "main", "commit": "29a0adb0b21b087a7209ee3b131cb16af9f60fd4" },
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-cmp": { "branch": "main", "commit": "3403e2e9391ed0a28c3afddd8612701b647c8e26" },
+  "nvim-deck": { "branch": "main", "commit": "e9411fa981fc9ef0eaaa52af876d1fc460dbb348" },
   "nvim-early-retirement": { "branch": "main", "commit": "793bc848f71947f004c88c9fbc5604d55d4dddcc" },
   "nvim-jdtls": { "branch": "master", "commit": "ece818f909c6414cbad4e1fb240d87e003e10fda" },
   "nvim-lint": { "branch": "master", "commit": "6b46370d02cd001509a765591a3ffc481b538794" },

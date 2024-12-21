@@ -35,8 +35,8 @@ return {
   --
   -- core
   --
-  { "<leader>s<space>", "<cmd>Telescope pickers<cr>", desc = "󰚾" },
-  { "<leader>su", "<cmd>Telescope resume<cr>", desc = "" },
+  { "<leader>su", "<cmd>Telescope pickers<cr>", desc = "󰚾" },
+  { "<leader>s<space>", "<cmd>Telescope resume<cr>", desc = "" },
   { "<leader>s<tab>", "<cmd>Telescope builtin<cr>", desc = "Builtin " },
   { "<leader>s<cr>", "<cmd>Telescope builtin include_extensions=true<cr>", desc = "All " },
   --

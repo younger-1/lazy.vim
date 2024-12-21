@@ -167,6 +167,7 @@ local all = {
       "grug-far",
       -- search and replace in current buffer
       -- "rip-substitute",
+      "deck",
     },
     keymap = {
       "which-key",
