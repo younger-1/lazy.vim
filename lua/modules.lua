@@ -132,7 +132,8 @@ local all = {
       "any-jump",
     },
     completion = {
-      "cmp",
+      "cmp-cmdline",
+      "cmp-rg",
     },
     debug = {
       "debugprint",
