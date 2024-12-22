@@ -1,7 +1,12 @@
 return {
   {
     "tpope/vim-fugitive",
-    cmd = { "Git", "G", "Gstatus", "Gblame", "Gpush", "Gpull", "Gdiff" },
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gtabedit",
+    },
     keys = {
       { "<leader>g ", "<cmd>Git<cr>" },
       { "<leader>g<tab>", "<cmd>tab Git<cr>" },
