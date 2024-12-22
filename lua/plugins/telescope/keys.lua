@@ -3,18 +3,6 @@ return {
   -- basic
   --
   {
-    "<leader><space>",
-    function()
-      require("telescope.builtin").find_files({
-        cwd = LazyVim.root(),
-        follow = true,
-        hidden = true,
-        no_ignore = true,
-      })
-    end,
-    desc = "Files (with ignored)",
-  },
-  {
     "<leader>/",
     function()
       require("telescope.builtin").live_grep({
@@ -145,6 +133,33 @@ return {
     end,
     desc = "Grep (cwd)",
   },
+  {
+    "<leader>sA",
+    function()
+      require("telescope.builtin").live_grep({
+        cwd = LazyVim.root(),
+        follow = true,
+        hidden = true,
+        no_ignore = true,
+      })
+    end,
+    desc = "Grep (with ignored)",
+  },
+  {
+    mode = "x",
+    "<leader>sA",
+    function()
+      local text = U.get_visual_selection()
+      require("telescope.builtin").live_grep({
+        cwd = LazyVim.root(),
+        follow = true,
+        hidden = true,
+        no_ignore = true,
+      })
+      vim.fn.feedkeys(text)
+    end,
+    desc = "Grep (with ignored)",
+  },
   --
   -- word
   --
@@ -198,14 +213,14 @@ return {
         cwd = LazyVim.root(),
       })
     end,
-    desc = "Find file (root)",
+    desc = "Files (root)",
   },
   {
     "<leader>fF",
     function()
       require("telescope.builtin").find_files({})
     end,
-    desc = "Find file (cwd)",
+    desc = "Files (cwd)",
   },
   {
     mode = "x",
@@ -217,7 +232,7 @@ return {
       })
       vim.fn.feedkeys(text)
     end,
-    desc = "Find file (root)",
+    desc = "Files (root)",
   },
   {
     mode = "x",
@@ -227,7 +242,34 @@ return {
       require("telescope.builtin").find_files({})
       vim.fn.feedkeys(text)
     end,
-    desc = "Find file (cwd)",
+    desc = "Files (cwd)",
+  },
+  {
+    "<leader>fa",
+    function()
+      require("telescope.builtin").find_files({
+        cwd = LazyVim.root(),
+        follow = true,
+        hidden = true,
+        no_ignore = true,
+      })
+    end,
+    desc = "Files (with ignored)",
+  },
+  {
+    mode = "x",
+    "<leader>fa",
+    function()
+      local text = U.get_visual_selection()
+      require("telescope.builtin").find_files({
+        cwd = LazyVim.root(),
+        follow = true,
+        hidden = true,
+        no_ignore = true,
+      })
+      vim.fn.feedkeys(text)
+    end,
+    desc = "Files (with ignored)",
   },
   --
   -- recent

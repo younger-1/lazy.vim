@@ -1,5 +1,7 @@
 return function(_, opts)
   local actions = require("telescope.actions")
+  local action_layout = require("telescope.actions.layout")
+
   return vim.tbl_deep_extend("force", opts, {
     defaults = {
       -- layout_config = { prompt_position = "top" },
@@ -68,6 +70,16 @@ return function(_, opts)
 
           ["<A-q>"] = actions.smart_add_to_qflist + actions.open_qflist,
           ["<A-z>"] = actions.smart_add_to_loclist + actions.open_loclist,
+
+          ["<A-.>"] = actions.cycle_previewers_next,
+          ["<A-,>"] = actions.cycle_previewers_prev,
+
+          ["<A-]>"] = action_layout.cycle_layout_next,
+          ["<A-[>"] = action_layout.cycle_layout_prev,
+
+          ["<A-\\>"] = action_layout.toggle_mirror,
+          ["<A-/>"] = action_layout.toggle_preview,
+          ["<A-;>"] = action_layout.toggle_prompt_position,
 
           ["<CR>"] = {
             -- @see https://github.com/nvim-telescope/telescope.nvim/issues/1048#issuecomment-2177826003

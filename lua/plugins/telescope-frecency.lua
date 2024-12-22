@@ -1,7 +1,6 @@
 return {
   {
     "nvim-telescope/telescope-frecency.nvim",
-    dependencies = { "kkharji/sqlite.lua" },
     keys = {
       { "<leader>fr", "<cmd>Telescope frecency<cr>", desc = "Frecency" },
       { "<leader>fR", "<cmd>Telescope frecency default_text=:CWD:<cr>", desc = "Frecency (cwd)" },

@@ -4,7 +4,16 @@ return {
     "danielfalk/smart-open.nvim",
     dependencies = { "kkharji/sqlite.lua" },
     keys = {
-      { "<leader><leader>", "<cmd>Telescope smart_open<cr>", desc = "Smart frecency" },
+      -- { "<leader><leader>", "<cmd>Telescope smart_open<cr>", desc = "Smart frecency" },
+      {
+        "<leader><leader>",
+        function()
+          require("telescope").extensions.smart_open.smart_open({
+            cwd = LazyVim.root(),
+          })
+        end,
+        desc = "Smart frecency",
+      },
     },
     specs = {
       "nvim-telescope/telescope.nvim",
@@ -12,10 +21,8 @@ return {
         extensions = {
           smart_open = {
             show_scores = true,
-            ignore_patterns = { "*.git/*", "*/tmp/*" },
-            match_algorithm = "fzy",
-            open_buffer_indicators = { previous = "👀", others = "🙈" },
-            buffer_indicators = { previous = "#", others = "*" },
+            match_algorithm = "fzf",
+            open_buffer_indicators = { previous = "#", others = "*" },
           },
         },
       },
