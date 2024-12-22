@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- spellcheck dictionary for programmers
   {

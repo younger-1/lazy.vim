@@ -1,8 +1,11 @@
+---@type LazySpec
 return {
   {
     "kevinhwang91/nvim-fundo",
-    lazy = true,
     dependencies = { "kevinhwang91/promise-async" },
     opts = {},
+    build = function()
+      require("fundo").install()
+    end,
   },
 }

@@ -168,7 +168,7 @@ local all = {
     undo = {
       "undotree",
       "telescope-undo",
-      -- "fundo",
+      "fundo",
     },
     search = {
       -- search and replace in multiple file
