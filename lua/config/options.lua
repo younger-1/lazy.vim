@@ -7,6 +7,7 @@ vim.g.maplocalleader = ","
 -- vim.g.autoformat = false
 vim.g.trouble_lualine = false
 vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_cmp = "nvim-cmp"
 
 local o = vim.opt
 

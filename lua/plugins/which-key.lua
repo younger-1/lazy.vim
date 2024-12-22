@@ -2,7 +2,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      preset = "classic",
+      preset = "helix",
       plugins = {
         presets = {
           operators = false, -- adds help for operators like d, y, ...

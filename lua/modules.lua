@@ -1,4 +1,6 @@
 LAZY_PLUGIN_SPEC = {
+  { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
+  { import = "lazyvim.plugins.extras.editor.telescope" },
   { import = "lazyvim.plugins.extras.coding.mini-surround" },
   { import = "lazyvim.plugins.extras.coding.yanky" },
   { import = "lazyvim.plugins.extras.editor.outline" },
@@ -111,7 +113,7 @@ local all = {
       "winsep",
     },
     indent = {
-      "mini.indentscope",
+      -- "mini.indentscope",
       -- "hlchunk",
     },
     cursor = {
