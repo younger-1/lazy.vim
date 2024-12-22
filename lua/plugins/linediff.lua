@@ -3,12 +3,12 @@ return {
     "AndrewRadev/linediff.vim",
     cmd = { "Linediff", "LinediffAdd", "LinediffShow", "LinediffLast", "LinediffMerge", "LinediffPick" },
     keys = {
-      { "<leader>vld", ":Linediff<cr>", mode = { "x" } },
-      { "<leader>vla", ":LinediffAdd<cr>", mode = { "x" } },
-      { "<leader>vll", ":LinediffLast<cr>", mode = { "x" } },
-      { "<leader>vls", "<cmd>LinediffShow<cr>" },
-      { "<leader>vlm", "<cmd>LinediffMerge<cr>" },
-      { "<leader>vlp", "<cmd>LinediffPick<cr>" },
+      { "<leader>gvd", ":Linediff<cr>", mode = { "x" } },
+      { "<leader>gva", ":LinediffAdd<cr>", mode = { "x" } },
+      { "<leader>gvl", ":LinediffLast<cr>", mode = { "x" } },
+      { "<leader>gvs", "<cmd>LinediffShow<cr>" },
+      { "<leader>gvm", "<cmd>LinediffMerge<cr>" },
+      { "<leader>gvp", "<cmd>LinediffPick<cr>" },
     },
     init = function()
       -- TODO: use `b:differ.description`

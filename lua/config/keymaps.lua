@@ -98,6 +98,8 @@ map("n", "<leader><cr>", "<cmd>message<cr>")
 
 map("n", "<leader>vi", "<cmd>Inspect<cr>")
 map("n", "<leader>vI", "<cmd>InspectTree<cr>")
+require("core.inspect-lsp")
+map("n", "<leader>vl", "<cmd>InspectLspClient<cr>")
 
 -- abbreviations only expand when you are typing a command and press space
 local function command_alias(abbr, expansion)
@@ -139,9 +141,9 @@ command_alias("!", "terminal")
 -- command_alias("git", "Git")
 -- command_alias("man", "Man")
 
-local ft = require("tool.float-term")
+local ft = require("core.float-term")
 vim.keymap.set("n", "<D-o>", ft.toggleterm, { desc = "Toggle float terminal" })
 vim.keymap.set("t", "<D-o>", ft.toggleterm, { buffer = ft.buf, desc = "Toggle float terminal" })
 
-local t = require("tool.terminal")
+local t = require("core.terminal")
 vim.keymap.set({ "n", "t" }, "<C-`>", t.toggle, { desc = "Toggle terminal", silent = true })
