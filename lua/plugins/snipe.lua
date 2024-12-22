@@ -12,7 +12,7 @@ return {
     },
     opts = {
       ui = {
-        position = "cursor",
+        position = "center",
         text_align = "file-first",
       },
       navigate = {

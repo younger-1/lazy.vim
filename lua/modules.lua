@@ -39,6 +39,7 @@ local all = {
       "flash",
       -- move by subwords and skip insignificant punctuation.
       "spider",
+      -- "easyword",
     },
     change = {
       "visual-surround",
@@ -194,6 +195,9 @@ local all = {
     },
     nvzone = {
       "nvzone",
+    },
+    spell = {
+      "dirty-talk",
     },
   },
 }
