@@ -133,6 +133,7 @@ local all = {
       "any-jump",
     },
     completion = {
+      "cmp-buffer",
       "cmp-cmdline",
       "cmp-rg",
     },
