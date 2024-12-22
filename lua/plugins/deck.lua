@@ -88,10 +88,10 @@ return {
       -- For manual configuration, refer to the code in `deck/easy.lua`.
       require("deck.easy").setup()
       -- Example key bindings for launching nvim-deck sources. (These mapping required `deck.easy` calls.)
-      vim.keymap.set("n", ",df", "<Cmd>Deck files<CR>", { desc = "Files/buffers" })
-      vim.keymap.set("n", ",db", "<Cmd>Deck buffers<CR>", { desc = "Show recent files, buffers, and more" })
-      vim.keymap.set("n", ",ds", "<Cmd>Deck grep<CR>", { desc = "Start grep search" })
-      vim.keymap.set("n", ",dg", "<Cmd>Deck git<CR>", { desc = "Open git launcher" })
+      vim.keymap.set("n", ",df", "<Cmd>Deck files<CR>", { desc = "File/Buffer/Recent" })
+      vim.keymap.set("n", ",db", "<Cmd>Deck buffers<CR>", { desc = "Buffers" })
+      vim.keymap.set("n", ",ds", "<Cmd>Deck grep<CR>", { desc = "Search" })
+      vim.keymap.set("n", ",dg", "<Cmd>Deck git<CR>", { desc = "Git" })
 
       -- After registration, you can start the preset using the `:Deck recent` command.
       require("deck").register_start_preset("recent", function()
@@ -100,7 +100,7 @@ return {
           require("deck.builtin.source.buffers")(),
         })
       end)
-      vim.keymap.set("n", ",dr", "<Cmd>Deck recent<CR>", { desc = "Recent" })
+      vim.keymap.set("n", ",dr", "<Cmd>Deck recent<CR>", { desc = "Recent/Buffer" })
     end,
   },
   {

@@ -56,9 +56,6 @@ local all = {
       "guess-indent",
       -- "dansa",
       -- "toggle",
-      {
-        "hrsh7th/nvim-kit",
-      },
     },
   },
   ui = {
@@ -166,14 +163,26 @@ local all = {
     diff = {
       "linediff",
     },
+    undo = {
+      "undotree",
+      "telescope-undo",
+      -- "fundo",
+    },
     search = {
-      "telescope",
-      "easypick",
       -- search and replace in multiple file
       "grug-far",
       -- search and replace in current buffer
       -- "rip-substitute",
       "deck",
+    },
+    telescope = {
+      "telescope",
+      "telescope-lazy",
+      "telescope-symbols",
+      "telescope-env",
+      "easypick",
+      "smart-open",
+      "telescope-frecency",
     },
     keymap = {
       "which-key",
@@ -184,11 +193,6 @@ local all = {
     },
     nvzone = {
       "nvzone",
-    },
-    undo = {
-      "undotree",
-      "telescope-undo",
-      -- "fundo",
     },
   },
 }
