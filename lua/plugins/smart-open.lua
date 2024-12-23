@@ -30,7 +30,7 @@ return {
     init = function()
       -- To record most recent files opened by telescope
       LazyVim.on_load("telescope.nvim", function()
-        vim.cmd("Lazy load smart-open.nvim")
+        require("lazy").load({ plugins = { "smart-open.nvim" } })
       end)
     end,
     config = function()
