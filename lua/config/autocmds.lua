@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "help",
     "git",
     "fugitive",
+    "fugitiveblame",
     "floggraph",
     "gitgraph",
   },
