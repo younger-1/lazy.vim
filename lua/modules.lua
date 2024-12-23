@@ -151,6 +151,9 @@ local all = {
     json = {
       "sortjson",
     },
+    help = {
+      "helpview",
+    },
   },
   tool = {
     git = {
