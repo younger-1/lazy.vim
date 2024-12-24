@@ -31,8 +31,6 @@ local all = {
       "lazyvim",
       "snacks",
       "colorscheme",
-      -- plugin installation system
-      "activate",
     },
     motion = {
       "matchup",
@@ -192,6 +190,8 @@ local all = {
       "easypick",
       "smart-open",
       "telescope-frecency",
+      -- plugin installation system
+      "activate",
     },
     keymap = {
       "which-key",
