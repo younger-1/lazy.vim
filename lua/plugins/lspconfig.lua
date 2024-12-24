@@ -33,9 +33,24 @@ return {
 
       ---@type PluginLspOpts
       local cfg = {
+        ---@type vim.diagnostic.Opts
         diagnostics = {
           float = {
             border = "single",
+            source = false,
+            -- prefix = function(d, i, total)
+            --   return string.format("%s. ", i, total), ""
+            -- end,
+            suffix = "",
+            format = function(d)
+              -- XY = vim.deepcopy(d)
+              local msg = d.message
+              local code = d.code or (d.user_data and d.user_data.lsp.code)
+              if code then
+                msg = string.format(" %s ▌%s▐", msg, code)
+              end
+              return msg
+            end,
           },
         },
         servers = {

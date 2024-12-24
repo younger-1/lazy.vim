@@ -1,6 +1,27 @@
 return {
   { import = "lazyvim.plugins.extras.lang.go" },
 
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = false,
+              codelenses = {
+                gc_details = true,
+              },
+              hints = {
+                compositeLiteralTypes = false,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
   -- disable gofumpt
   {
     "stevearc/conform.nvim",
