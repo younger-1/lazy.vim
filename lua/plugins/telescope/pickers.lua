@@ -7,7 +7,7 @@ local M = {}
 
 function M.glob_grep(opts)
   opts = opts or {}
-  opts.cwd = opts.cwd or LazyVim.root()
+  opts.cwd = opts.cwd or U.root()
 
   local finder = finders.new_async_job({
     command_generator = function(prompt)

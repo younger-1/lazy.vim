@@ -6,7 +6,7 @@ return {
     "<leader>/",
     function()
       require("telescope.builtin").live_grep({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         additional_args = {
           "-F", -- "--fixed-strings"
         },
@@ -99,7 +99,7 @@ return {
     "<leader>sg",
     function()
       require("telescope.builtin").live_grep({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
     end,
     desc = "Grep (root)",
@@ -117,7 +117,7 @@ return {
     function()
       local text = U.get_visual_selection()
       require("telescope.builtin").live_grep({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
       vim.fn.feedkeys(text)
     end,
@@ -137,7 +137,7 @@ return {
     "<leader>sA",
     function()
       require("telescope.builtin").live_grep({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         follow = true,
         hidden = true,
         no_ignore = true,
@@ -151,7 +151,7 @@ return {
     function()
       local text = U.get_visual_selection()
       require("telescope.builtin").live_grep({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         follow = true,
         hidden = true,
         no_ignore = true,
@@ -168,7 +168,7 @@ return {
     function()
       require("telescope.builtin").grep_string({
         word_match = "-w",
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
     end,
     desc = "Word (root)",
@@ -187,7 +187,7 @@ return {
     "<leader>sw",
     function()
       require("telescope.builtin").grep_string({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         search = U.get_visual_selection(),
       })
     end,
@@ -210,7 +210,7 @@ return {
     "<leader>ff",
     function()
       require("telescope.builtin").find_files({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
     end,
     desc = "Files (root)",
@@ -228,7 +228,7 @@ return {
     function()
       local text = U.get_visual_selection()
       require("telescope.builtin").find_files({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
       vim.fn.feedkeys(text)
     end,
@@ -248,7 +248,7 @@ return {
     "<leader>fa",
     function()
       require("telescope.builtin").find_files({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         follow = true,
         hidden = true,
         no_ignore = true,
@@ -262,7 +262,7 @@ return {
     function()
       local text = U.get_visual_selection()
       require("telescope.builtin").find_files({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
         follow = true,
         hidden = true,
         no_ignore = true,
@@ -278,7 +278,7 @@ return {
     "<leader>fh",
     function()
       require("telescope.builtin").oldfiles({
-        cwd = LazyVim.root(),
+        cwd = U.root(),
       })
     end,
     desc = "Recent (root)",
@@ -286,9 +286,7 @@ return {
   {
     "<leader>fH",
     function()
-      require("telescope.builtin").oldfiles({
-        cwd = LazyVim.root.cwd(),
-      })
+      require("telescope.builtin").oldfiles({})
     end,
     desc = "Recent (cwd)",
   },
@@ -300,7 +298,7 @@ return {
     "<leader>go",
     function()
       require("telescope.builtin").git_status({
-        cwd = LazyVim.root.git(),
+        cwd = U.root(),
       })
     end,
     desc = "Status",
@@ -310,7 +308,7 @@ return {
     "<leader>gc",
     function()
       require("telescope.builtin").git_commits({
-        cwd = LazyVim.root.git(),
+        cwd = U.root(),
       })
     end,
     desc = "Commits",
@@ -320,7 +318,7 @@ return {
     "<leader>gh",
     function()
       require("telescope.builtin").git_bcommits({
-        cwd = LazyVim.root.git(),
+        cwd = U.root(),
       })
     end,
     desc = "Buf commits",
@@ -329,7 +327,7 @@ return {
     "<leader>gl",
     function()
       require("telescope.builtin").git_bcommits_range({
-        cwd = LazyVim.root.git(),
+        cwd = U.root(),
       })
     end,
     desc = "Line commits",

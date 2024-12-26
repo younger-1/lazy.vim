@@ -10,7 +10,7 @@ return {
         "<leader>fP",
         function()
           local s = require("project_nvim.utils.history").session_projects
-          local r = LazyVim.root.get()
+          local r = U.root()
           table.insert(s, r)
           -- display info
           LazyVim.info({ "Path added:\n", vim.fn.fnamemodify(r, ":~") }, { title = "Project" })

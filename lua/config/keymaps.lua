@@ -147,3 +147,5 @@ vim.keymap.set("t", "<D-o>", ft.toggleterm, { buffer = ft.buf, desc = "Toggle fl
 
 local t = require("core.terminal")
 vim.keymap.set({ "n", "t" }, "<C-`>", t.toggle, { desc = "Toggle terminal", silent = true })
+
+map("n", "cd", U.change_cwd)

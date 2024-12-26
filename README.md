@@ -11,4 +11,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [ ] bug: Breaks vim.v.count in visual mode <https://github.com/folke/which-key.nvim/issues/824>
 - [ ] paint.nvim: upstream PR for config priority
 - [ ] menu: support exec cmd in visual mode
+- [x] use vim.ui.select to change cwd
 

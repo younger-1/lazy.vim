@@ -9,7 +9,7 @@ return {
         "<leader><leader>",
         function()
           require("telescope").extensions.smart_open.smart_open({
-            cwd = LazyVim.root(),
+            cwd = U.root(),
           })
         end,
         desc = "Smart frecency",
