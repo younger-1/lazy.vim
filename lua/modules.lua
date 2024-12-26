@@ -127,6 +127,8 @@ local all = {
       "trouble",
       -- "line-diag",
       "tiny-diag",
+      -- "tiny-action",
+      "actions-preview",
     },
     treesitter = {
       "treesj",
