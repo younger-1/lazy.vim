@@ -125,6 +125,8 @@ local all = {
     lsp = {
       "lspconfig",
       "trouble",
+      -- "line-diag",
+      "tiny-diag",
     },
     treesitter = {
       "treesj",
