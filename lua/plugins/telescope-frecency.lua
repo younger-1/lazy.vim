@@ -2,8 +2,8 @@ return {
   {
     "nvim-telescope/telescope-frecency.nvim",
     keys = {
-      { "<leader>fr", "<cmd>Telescope frecency<cr>", desc = "Frecency" },
-      { "<leader>fR", "<cmd>Telescope frecency default_text=:CWD:<cr>", desc = "Frecency (cwd)" },
+      { "<leader>fh", "<cmd>Telescope frecency default_text=:CWD:<cr>", desc = "Frecency" },
+      { "<leader>fH", "<cmd>Telescope frecency<cr>", desc = "Frecency (all)" },
     },
     specs = {
       "nvim-telescope/telescope.nvim",

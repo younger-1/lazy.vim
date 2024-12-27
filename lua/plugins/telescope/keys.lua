@@ -17,7 +17,7 @@ return {
   {
     "<leader>,",
     "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>",
-    desc = "Buffers",
+    desc = "Buffers (all)",
   },
   { "<leader>;", "<cmd>Telescope commands<cr>" },
   --
@@ -275,20 +275,39 @@ return {
   -- recent
   --
   {
-    "<leader>fh",
+    "<leader>fr",
     function()
       require("telescope.builtin").oldfiles({
         cwd = U.root(),
       })
     end,
-    desc = "Recent (root)",
+    desc = "Recent",
   },
   {
-    "<leader>fH",
+    "<leader>fR",
     function()
       require("telescope.builtin").oldfiles({})
     end,
-    desc = "Recent (cwd)",
+    desc = "Recent (all)",
+  },
+  --
+  -- buffer
+  --
+  {
+    "<leader>fb",
+    function()
+      require("telescope.builtin").buffers({
+        sort_mru = true,
+        sort_lastused = true,
+        cwd = U.root(),
+      })
+    end,
+    desc = "Buffers (root)",
+  },
+  {
+    "<leader>fB",
+    "<cmd>Telescope buffers sort_mru=true sort_lastused=true only_cwd=true<cr>",
+    desc = "Buffers (cwd)",
   },
   --
   -- git
