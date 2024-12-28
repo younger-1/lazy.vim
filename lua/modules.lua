@@ -124,7 +124,7 @@ local all = {
       "lspconfig",
       "trouble",
       -- "line-diag",
-      "tiny-diag",
+      -- "tiny-diag",
       -- "tiny-action",
       "actions-preview",
     },

@@ -1,63 +1,109 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      bind_to_cwd = false,
+      filesystem = {
+        bind_to_cwd = false,
+        follow_current_file = { enabled = true },
+      },
+      buffers = {
+        bind_to_cwd = false,
+        follow_current_file = { enabled = true },
+      },
+    },
     keys = {
       {
         "<leader>ee",
-        "<cmd>Neotree toggle reveal_force_cwd left<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s left"):format(U.root()))
+        end,
         desc = "File tree",
       },
       -- float window
       {
         "<leader>fe",
-        "<cmd>Neotree toggle reveal_force_cwd float<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s float"):format(U.root()))
+          -- require("neo-tree.command").execute({
+          --   toggle = true,
+          --   reveal = true,
+          --   dir = LazyVim.root(),
+          --   position = "float",
+          -- })
+        end,
         desc = "File tree",
       },
       {
         "<leader>be",
-        "<cmd>Neotree toggle reveal_force_cwd float buffers<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s float buffers"):format(U.root()))
+          -- require("neo-tree.command").execute({
+          --   toggle = true,
+          --   reveal = true,
+          --   dir = LazyVim.root(),
+          --   position = "float",
+          --   source = "buffers",
+          -- })
+        end,
         desc = "Buf tree",
       },
       {
         "<leader>ge",
-        "<cmd>Neotree toggle reveal_force_cwd float git_status<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s float git_status"):format(U.root()))
+        end,
         desc = "Git tree",
       },
       -- current window
       {
         "<leader>ef",
-        "<cmd>Neotree toggle reveal_force_cwd current<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s current"):format(U.root()))
+        end,
         desc = "File tree",
       },
       {
         "<leader>eb",
-        "<cmd>Neotree toggle reveal_force_cwd current buffers<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s current buffers"):format(U.root()))
+        end,
         desc = "Buf tree",
       },
       {
         "<leader>eg",
-        "<cmd>Neotree toggle reveal_force_cwd current git_status<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s current git_status"):format(U.root()))
+        end,
         desc = "Git tree",
       },
       --
       {
         "<leader>ek",
-        "<cmd>Neotree toggle reveal_force_cwd top<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s top"):format(U.root()))
+        end,
         desc = "File tree top",
       },
       {
         "<leader>ej",
-        "<cmd>Neotree toggle reveal_force_cwd bottom<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s bottom"):format(U.root()))
+        end,
         desc = "File tree bottom",
       },
       {
         "<leader>eh",
-        "<cmd>Neotree toggle reveal_force_cwd left<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s left"):format(U.root()))
+        end,
         desc = "File tree left",
       },
       {
         "<leader>el",
-        "<cmd>Neotree toggle reveal_force_cwd right<cr>",
+        function()
+          vim.cmd(("Neotree toggle reveal dir=%s right"):format(U.root()))
+        end,
         desc = "File tree right",
       },
     },
