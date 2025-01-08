@@ -149,3 +149,4 @@ local t = require("core.terminal")
 vim.keymap.set({ "n", "t" }, "<C-`>", t.toggle, { desc = "Toggle terminal", silent = true })
 
 map("n", "cd", U.change_cwd)
+map("n", "cx", U.switch_to_test)

@@ -115,4 +115,40 @@ function M.change_cwd()
   end)
 end
 
+function M.switch_to_test()
+  -- local file_path = vim.api.nvim_buf_get_name(0)
+  -- local file_name = vim.fs.basename(file_path)
+  -- local file_dir = vim.fs.dirname(file_path)
+  local file_dir = vim.fn.expand("%:h")
+  local file_ext = vim.fn.expand("%:t:e")
+  local file_root = vim.fn.expand("%:t:r")
+  local is_test = false
+  if file_root:match("test") then
+    is_test = true
+    file_root = file_root:gsub("_?test", "")
+  end
+
+  local test_files = vim.fs.find(function(name, path)
+    return name:match(string.format("%s", file_root))
+      and name:match(string.format("%s$", file_ext))
+      and ((not is_test and name:match("test")) or (is_test and not name:match("test")))
+  end, { path = file_dir, type = "file", limit = math.huge })
+
+  if #test_files <= 1 then
+    U.open_file(test_files[1])
+    return
+  end
+
+  vim.ui.select(test_files, {
+    prompt = "Switch to test",
+    format_item = function(item)
+      return item
+    end,
+  }, function(choice)
+    if choice then
+      U.open_file(choice)
+    end
+  end)
+end
+
 return M

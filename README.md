@@ -12,4 +12,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [ ] paint.nvim: upstream PR for config priority
 - [ ] menu: support exec cmd in visual mode
 - [x] use vim.ui.select to change cwd
+- [x] switch between go and go-test
 
