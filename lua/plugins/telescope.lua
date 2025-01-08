@@ -1,7 +1,8 @@
 ---@type LazySpec
 return {
   {
-    "nvim-telescope/telescope.nvim",
+    "younger-1/telescope.nvim",
+    branch = "young/feat/insert-original-file",
     opts = require("plugins.telescope.opts"),
     keys = require("plugins.telescope.keys"),
     dependencies = {
