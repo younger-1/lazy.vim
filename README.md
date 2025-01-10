@@ -13,4 +13,5 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 - [ ] menu: support exec cmd in visual mode
 - [x] use vim.ui.select to change cwd
 - [x] switch between go and go-test
+- [ ] lazy support multiple remote
 
