@@ -47,8 +47,11 @@ o.listchars = {
 
 o.diffopt:append({
   "vertical",
+  "internal",
+  "filler",
+  "closeoff",
   "indent-heuristic", -- make vimdiff more closely match git diff
-  "algorithm:patience",
+  "algorithm:histogram",
   "linematch:60", -- nvim-0.9
 })
 

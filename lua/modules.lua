@@ -1,3 +1,6 @@
+-- TODO:
+-- https://www.reddit.com/r/neovim/comments/1i2zgnb/redoing_my_config_what_are_your_neovim_favorites/
+
 LAZY_PLUGIN_SPEC = {
   { import = "lazyvim.plugins.extras.coding.mini-surround" },
   { import = "lazyvim.plugins.extras.coding.yanky" },
@@ -130,6 +133,7 @@ local all = {
       "actions-preview",
     },
     treesitter = {
+      -- "treesitter-textobjects",
       "treesj",
       -- "treesitter-refactor",
     },
