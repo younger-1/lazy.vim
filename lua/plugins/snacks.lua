@@ -23,8 +23,22 @@ return {
             statuscolumn = " ",
             conceallevel = 3,
           },
+          border = "single",
         })
       end,
+    },
+    {
+      "<leader>ft",
+      function()
+        Snacks.terminal(nil, {
+          cwd = U.root(),
+          win = {
+            position = "float",
+            border = "rounded",
+          },
+        })
+      end,
+      desc = "Terminal (Root Dir)",
     },
   },
   ---@type snacks.Config
@@ -33,12 +47,28 @@ return {
       notification = {
         wo = { wrap = true }, -- wrap long notifications
       },
+      float = {
+        border = "none",
+      },
     },
     --
     statuscolumn = {
       folds = {
         open = true, -- show open fold icons
         git_hl = true, -- use gitsigns hl for fold icons
+      },
+    },
+    bigfile = {
+      size = 0.5 * 1024 * 1024, -- 0.5MB
+    },
+    indent = {
+      chunk = {
+        enabled = true,
+      },
+    },
+    terminal = {
+      win = {
+        position = "bottom",
       },
     },
   },

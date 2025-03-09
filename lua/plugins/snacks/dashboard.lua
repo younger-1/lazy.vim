@@ -10,6 +10,7 @@ return {
         "Dashboard",
       },
     },
+    ---@type snacks.Config
     opts = {
       dashboard = {
         preset = {
