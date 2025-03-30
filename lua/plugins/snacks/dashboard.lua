@@ -84,7 +84,7 @@ return {
               -- enabled = Snacks.git.get_root() ~= nil,
               enabled = vim.fs.root(0, ".git") ~= nil,
               -- cmd = "hub status --short --branch --renames",
-              cmd = "git ss",
+              cmd = "git status --short --branch",
               height = 5,
               padding = 1,
               ttl = 5 * 60,
