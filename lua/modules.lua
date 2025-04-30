@@ -14,7 +14,7 @@ LAZY_PLUGIN_SPEC = {
   { import = "lazyvim.plugins.extras.lang.toml" },
   { import = "lazyvim.plugins.extras.lang.yaml" },
   { import = "lazyvim.plugins.extras.lang.sql" },
-  { import = "lazyvim.plugins.extras.util.dot" },
+  -- { import = "lazyvim.plugins.extras.util.dot" }, -- disable because `shellcheck` 0.10.0 bug: high cpu usage and run out of memory
 }
 
 local function spec(item)
