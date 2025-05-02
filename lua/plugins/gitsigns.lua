@@ -4,7 +4,8 @@ return {
     opts = {
       attach_to_untracked = true,
       word_diff = true,
-      current_line_blame = true,
+      -- FIXME: https://github.com/lewis6991/gitsigns.nvim/issues/1291
+      -- current_line_blame = true,
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'

@@ -73,6 +73,7 @@ local all = {
     winbar = {
       "dropbar",
       "navic",
+      "namu",
     },
     cmdline = {
       "noice",
