@@ -4,6 +4,7 @@
   "actions-preview.nvim": { "branch": "master", "commit": "36513ad213855d497b7dd3391a24d1d75d58e36f" },
   "activate.nvim": { "branch": "young/feat/use-stdpath", "commit": "57ceda8a72bfa3c496b25885e602b10ca4eb5093" },
   "any-jump.vim": { "branch": "master", "commit": "f95674d9a4251ac02f452d5f1861e4422f4652c7" },
+  "apidocs.nvim": { "branch": "main", "commit": "0f27a24b0a113162a6b5002bad43ee889c3a4591" },
   "backout.nvim": { "branch": "main", "commit": "27571231c2d4e70bff3f4395511d279a1080dbed" },
   "barbecue.nvim": { "branch": "main", "commit": "3e31404f0b93a2c30d151abf0648650ac811c664" },
   "blame.nvim": { "branch": "main", "commit": "b87b8c820e4cec06fbbd2f946b7b35c45906ee0c" },

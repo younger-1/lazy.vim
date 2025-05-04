@@ -217,6 +217,9 @@ local all = {
     spell = {
       "dirty-talk",
     },
+    man = {
+      -- "apidocs",
+    },
     other = {
       "wakatime",
     },
