@@ -7,3 +7,4 @@ U = require("core.util")
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("modules")
 require("config.lazy")
+require("config.vscode")

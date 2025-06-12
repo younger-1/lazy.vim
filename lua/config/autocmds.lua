@@ -83,6 +83,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
+  desc = "lisp: set local option",
+  group = augroup("lisp_option"),
+  pattern = {
+    "lisp",
+  },
+  callback = function(event)
+    vim.bo.commentstring = ";; %s"
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
   desc = "add border to float window",
   group = augroup("add_border"),
   pattern = {

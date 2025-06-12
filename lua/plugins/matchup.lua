@@ -1,6 +1,7 @@
 return {
   {
     "andymass/vim-matchup",
+    vscode = true,
     event = { "BufReadPost", "BufNewFile" },
     keys = {
       { "<tab>", "%", remap = true, mode = { "n", "x", "o" } },

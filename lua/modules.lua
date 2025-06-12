@@ -2,6 +2,7 @@
 -- https://www.reddit.com/r/neovim/comments/1i2zgnb/redoing_my_config_what_are_your_neovim_favorites/
 
 LAZY_PLUGIN_SPEC = {
+  { import = "lazyvim.plugins.extras.vscode" },
   { import = "lazyvim.plugins.extras.coding.mini-surround" },
   { import = "lazyvim.plugins.extras.coding.yanky" },
   { import = "lazyvim.plugins.extras.editor.outline" },
@@ -38,7 +39,7 @@ local all = {
       "matchup",
       -- "tabtree",
       -- "tabout",
-      "backout",
+      -- "backout",
       "flash",
       -- move by subwords and skip insignificant punctuation.
       "spider",
