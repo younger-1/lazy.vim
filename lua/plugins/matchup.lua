@@ -34,7 +34,8 @@ return {
       }
       vim.g.matchup_matchparen_nomode = "i"
       vim.g.matchup_matchparen_stopline = 400 * 2 -- for match highlighting only
-      vim.g.matchup_delim_stopline = 1500 * 2 -- generally
+      vim.g.matchup_delim_stopline = 1500 * 4 -- generally
+      vim.o.maxmempattern = 1000 * 2
     end,
   },
   {

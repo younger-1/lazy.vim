@@ -14,3 +14,5 @@ __pycache__/
 .nlsp-settings/
 
 local/init.lua
+
+lazyvim.json

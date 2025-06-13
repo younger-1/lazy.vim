@@ -3,14 +3,17 @@ if not vim.g.vscode then
 end
 
 vim.api.nvim_create_autocmd("User", {
-  pattern = "LazyVimKeymapsDefaults",
+  pattern = "LazyVimKeymaps",
   callback = function()
     local map = vim.keymap.set
 
     map("", "<tab>", "%", { remap = true })
     map("", "<S-tab>", "g%", { remap = true })
 
-    -- ctrl-tab in all editor groups
+    map("", "<C-o>", "<cmd>call VSCodeNotify('workbench.action.navigateBack')<cr>")
+    map("", "<C-i>", "<cmd>call VSCodeNotify('workbench.action.navigateForward')<cr>")
+
+    -- [ctrl-tab] in all editor groups
     map("n", "<BS>", "<cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<cr>")
     -- [edt mru]
     map("n", "<S-BS>", "<cmd>call VSCodeNotify('workbench.action.showAllEditorsByMostRecentlyUsed')<cr>")
@@ -27,7 +30,9 @@ vim.api.nvim_create_autocmd("User", {
     map("n", "<leader>/", "<cmd>call VSCodeNotify('workbench.action.findInFiles')<cr>")
     map("n", "<leader>sg", "<Cmd>call VSCodeNotify('workbench.action.quickTextSearch')<CR>")
 
+    -- [cmd-shift-o]
     map("n", "g<space>", "<cmd>call VSCodeNotify('workbench.action.gotoSymbol')<cr>")
+    -- [cmd-shift-.]
     map("n", "g<cr>", "<Cmd>call VSCodeNotify('breadcrumbs.focusAndSelect')<CR>")
 
     -- Keep undo/redo lists in sync with VsCode
